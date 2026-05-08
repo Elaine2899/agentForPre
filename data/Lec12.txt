@@ -1,0 +1,3603 @@
+各位同學好
+今天我們介紹第六章的第三部分
+那第三部分叫做二元隨機變數的機率函數
+那對於學應用統計的同學
+那這章也許也可以跳過
+它是optional
+但對於學工程統計
+或是將來想要修一些數理統計課的同學
+那我會建議第六章的第三部分
+有機會的話也可以看一下
+那第六章第三部分
+我們教的是二元隨機變數的機率函數
+也就是我們的
+Bivariate Probability Distribution
+來,那我們這份講義的參考來源
+是我們的Mendelhoff還有Lawson這兩本教科書
+那我們首先要介紹的是
+離散型二元隨機變數的機率函數
+也就是針對我們Discrete Random Variable
+我們有兩個變數
+那這兩個變數都是屬於Discrete Random Variable
+那它的Probability Function
+或者Probability Distribution
+我們要怎麼樣去把它找出來
+第一個我們先看一個定義
+這個定義叫做隨機向量
+Random Vector
+那我們怎麼定義這個隨機向量呢
+我們就說
+假設S它是在我們做一個實驗
+跟這個實驗有關的樣本空間
+也就是說這個S是我們的Sample Space
+Associated with the Experiment
+然後我們就另一個隨機變數X
+我們叫Random Vector X
+它是Omega的函數
+Y等於Y of Omega
+這是兩個函數
+那每一個函數就指定一個Real Number
+時數到Every Point Omega of Sample Space
+針對我們做這個實驗的樣本空間上的每一個點
+那我們可以透過函數
+然後可以把那個指定一個Real Number
+對我們樣本空間上每一個點指定一個時數
+那我們就說X跟Y就叫做一個
+Two-Dimensional Random Vector
+或我們叫做二維的隨機向量
+那類似的定義我們看過
+我們在講機率的時候
+那個時候我們只定義一個隨機變數X
+或是一個Event A
+類似的
+那在這裡因為我們是要講二維
+那將來同學如果有需要修課程
+譬如說多變量分析
+我們就會有P一個Dimension
+P一個隨機變量
+那這裡我們是只討論兩個
+將來就推廣成P個
+好,那我這上面這個定義就定義一個
+二維的隨機向量XY
+那下面呢我們就看一下這個Remark
+就請同學注意
+我們令X1和X2直到Xn
+它是N個Function
+Each assigning a Real Number to every outcome within experiment
+在一個實驗裡頭它每個結果
+然後我們就定義N個函數
+這個函數它是印製在我們樣本空間裡頭的每個結果
+那在這裡我們就叫X1到Xn
+我們稱它叫N-Dimensional Random Vector
+那這個就對應到我們上面的
+Two-Dimensional Random Vector
+二維的隨機向量
+當然我們可以推廣到N維的隨機向量
+那這個隨機向量呢
+那我們說這個X1到Xn
+這N個Random Variable
+我們說它是Jointly Distributed Random Variables
+下面我們再看另外一個定義
+這個定義呢我們先看的是
+離散型二元變數的聯合機率函數
+看中文好像很多
+它反正就是Joint
+因為你有兩個隨機變數
+所以它的機率函數這兩個
+我們就說它是Joint Probability Mass Function
+對於離散型Probability Function
+有些教科書就叫它Probability Mass Function
+那這是對於離散型的隨機變數
+那我們這個離散型隨機變數
+它的Joint Mass Function
+或我們簡稱Joint Probability Function
+我們叫做Pxy
+那這個Pxy等於P的
+當大X等於小X
+大Y等於小Y
+那這跟我們在一個隨機變數的
+離散型隨機函數
+譬如我們同學學過
+假如X是一個Discrete Random Variable
+那以前我們就定義說
+它的Probability Function
+或者我們叫Probability Mass Function
+常簡稱Probability Function PF
+我們就定義成
+當這個隨機變數X
+等於某個特定值小X
+那這個呢就叫做Probability Function
+那現在我們有兩個變數
+那它的X跟Y在樣本空間裡頭
+我們定義兩個變數
+那這兩個變數都是離散型的變數
+那在離散型變數呢
+它們定義在相同的樣本空間裡頭
+那我們就說它的Joint Probability Function
+或者Probability Mass Function
+我們叫Pxy
+那Pxy呢我們可以寫成這樣
+那它就是大X等於小X
+跟大Y等於小Y
+跟我們用一元的很類似
+符號是用一樣
+那我們說Joint Probability Mass Function
+Must satisfy the following conditions
+一個聯合的機率函數
+對於兩個變數的聯合機率函數
+它必須滿足以下兩個條件
+它才能稱為聯合的機率函數
+或者我們也可以這樣講
+一個二元的聯合機率函數
+它有兩個特性
+那第一個是什麼
+每一個Probability Function
+它必須大於零
+對於你所定義的這個XY
+在Real Number Set裡頭
+它必須是大於零
+然後呢Summation針對所有的X
+所有的Y
+它的P大X等於小X
+大Y等於小Y
+它是等於1
+那這個呢跟我們在上次看到
+只有一個隨機變數的
+Probability Mass Function
+是很像的
+這個Mass Function呢
+它也有兩個特性
+第一個特性呢
+我們以前都學過
+第一個特性
+就是Probability X
+它是大於等於零
+小於等於1
+它是一個大於等於零
+小於等於1的數
+那小於等於1
+我們可以看到這樣
+Probability
+把所有的XI
+針對所有的XI
+它加起來是1
+這個P of X
+它不可能超過1
+這也是如果單一個隨機變數
+那我們這邊有兩個隨機變數呢
+它的聯合機率函數
+我們就用這個符號寫PXY
+等於Probability大X等於小X
+大Y等於小Y
+那這就是我們的
+如何定義我們的
+離散型二元變數的
+聯合機率函數
+下面呢我們就來看
+我們怎樣去找一個
+Joined Probability Mass Function
+for two discrete random variable XY
+我們會找一個
+這我們上次在學隨機變數
+離散型隨機變數
+如何去找它的
+Probability Mass Function
+我們就說我們就建一個表
+這個表呢
+把所有X的可能值
+把它列出來
+譬如說
+我們X的可能值012下面
+那我們就找大X等於小X
+去求它的機率
+根據我們自己
+這個做的實驗
+它的樣本空間
+然後呢
+去把它的機率找出來
+那反正總機率呢
+要是等於1
+每一個機率呢
+都是大於等於0
+大於等於0
+要符合它的特性
+這是針對
+假如我們只有一個
+離散型隨機變數
+那我們怎麼定義
+我們的Probability Function
+然後我們怎樣去找出來
+建構我們的Probability Function
+那是用一個表
+那我們現在是兩個隨機變數
+我們如何去找它的機率
+Joined 聯合機率函數
+那我們拿一個例題來看
+這個例題呢
+就說
+假如Toss a fair coin three times
+Let X be the number of heads
+on the first toss
+我們的實驗是
+丟一個銅板三次
+所以每做一次Try
+就丟銅板三次
+然後我就觀察
+那X是說
+我丟的第一個銅板
+我丟第一次的時候
+我看到這人頭
+看到的人頭數
+Y呢
+是我把三個銅板都丟完了
+然後我去統計
+它總共看到幾個人頭數
+在丟完三次實驗的時候
+它的人頭數
+那這個例題呢
+就是要找這個實驗
+關於這個實驗
+它的Joined Probability Math Function
+of X跟Y
+所以X是第一個
+first toss
+丟第一銅板
+丟第一次的時候
+看到的人頭數
+Y是丟完三個銅板
+看到的人頭數
+總人頭數
+好
+那我們就利用這個例題來說明
+我們怎麼樣建構
+或找出我們離散型隨機變數
+它的Joined Probability Math Function
+那找的原則呢
+基本上就是跟我們以前一樣
+我們以前是針對一個隨機變數
+像我們這邊看到的
+那現在有兩個隨機變數
+所以我們找的原則呢
+也是建一個表
+針對XY
+它的Joined
+聯合
+Math
+這個Math要不要講沒有關係
+Probability
+Function
+那我們要怎麼去建構它
+跟這個類似
+我們就建一個表
+這個表呢
+通常X寫在列
+Y寫在行
+我們就根據我們的實驗
+這也是
+根據我們做的實驗
+把我們定義的隨機變數X
+它的可能值把它列出來
+這也是根據我們的實驗
+把可能的X值列出來
+可能的Y值列出來
+然後找它們的同時發生
+X等於某個特定值
+Y等於某個特定值的時候
+它的機率是多少
+那就是我們的Joined Probability Function
+那同學可以看到這裡
+我們丟一個銅板
+三次
+那我們的樣本空間就像我們這裡列的
+丟個銅板三次
+我們可能看到什麼
+所以我們在講這題的時候
+我們的實驗是Toss a coin three times
+所以我們的樣本空間
+就像我們在這裡看到
+列出來的我們的樣本空間
+所以這題呢
+我們的Experiment
+是Toss a coin
+這coin當然是個Fail coin
+three times
+好這實驗
+所以我們根據這實驗
+列出我們樣本空間
+那當然同學已經做了很多次
+也許不需要條列
+那這次呢
+是因為我們要介紹一個新東西
+叫做二元離散隨機變數
+它的機率函數
+所以我們就把它全部列出來
+丟一個銅板三次
+所以你看到的
+你如果是對看到head有興趣
+那你可能看到三個head
+三個都是head
+所以從three head
+看到three head
+你可能看到什麼
+two heads
+兩個人頭
+一個tail
+tail head head
+也可能看到head tail head
+我們以前都有講過
+這個叫做
+看到三個裡頭取兩個head
+它可能的排法
+那我們也可能看到一個head
+所以我們看到一個head
+就第一次head
+也可能第二head出現在第二次
+也可能head出現在第三次
+所以這個呢
+是看到one head
+看到一個人頭的情況
+那我們當然也可能有最後一個
+tail tail tail
+所以這個呢
+就是我們零個head
+看到這個零個head的情況
+那如果我們學過
+我們就知道
+the number of elements in the sample space
+就是八
+那也可以說
+我不要列出來sample space
+那每一次試行
+這個實驗有三個步驟完成
+我們利用懲罰法則
+那也可以每次實驗結果有兩個
+做三次
+那就二乘二乘二
+或者是二的三次方
+我們也可以知道
+我們的number of elements是八個
+那就不要列了
+好 這題列呢
+是因為我們要找
+join probability function
+那比較容易看
+所以我們從這裡呢
+譬如說
+我們怎樣定義我們的
+join probability function
+這裡頭的
+找的機率就叫join probability
+這一塊
+所以我們根據這個提議呢
+他說x
+是the number observed on the first
+這個是number of heads observed
+你看到人頭數
+在on the first trial
+你在第一次試行的時候
+first toss
+好 你丟第一次銅板的時候
+你看到的
+那個人頭數
+另外代表什麼
+total number of heads observed
+你觀察到的
+在after three toss
+在這個三次實驗的時候
+three toss
+在你丟了三次以後
+你的total number of heads
+一個是on the first heads
+所以我們在第一次
+丟這個銅板做這個實驗
+丟三次銅板
+x代表在丟完第一次銅板的時候
+你觀察到的人頭數
+所以丟完第一次銅板
+你能觀察到人頭數
+不是零
+看到零個人頭
+就是一
+這才丟第一次銅板
+就第一次銅板
+你看
+你不是看到head
+就是看到head
+好 你最多看到一個head
+那如果要不然你只看到tail
+那就是零跟一
+零跟一
+那y代表什麼
+total number
+所以total number
+你看到head
+因為我們對head有興趣
+所以我們這邊列的時候
+就從三
+兩個head
+一個head
+這樣來列
+所以我們最
+可能看到零個
+從小寫到大
+也可能看到一個
+也可能看到兩個
+也可能看到三個
+所以這個就像我們在做
+一個隨機變數
+要找它的機率函數的時候
+我們就把x
+它的可能值
+把它列出來
+譬如說丟一個銅板
+我們可能看到的人頭數
+那就零一
+然後我們再找
+大x等於小x
+把它找出來
+那這是關於一個隨機變數
+那我們現在
+是有兩個隨機變數
+所以它的joined probability function
+在哪裡
+這塊都是它的joined probability function
+那我們就來看
+在這
+所以我們知道我們有
+二乘上四
+有八個格子的機率要去填
+那我們現在就舉例來說
+我要找這個p00
+probability
+x等於零
+所以我們第一個要找
+要填的數字在這裡
+在這個格子
+它的機率是多少
+那就是當x等於零
+y也等於零
+pxy
+那就x等於零
+且y也等於零
+x等於零
+所以我第一次看到的是tail
+沒有看到head
+那然後呢
+我第二次看到的也是tail
+那我全部總數的heads
+我第一次看到的零個head
+我三次丟完以後
+總的人頭數也是零個
+那就只有一個case
+就是tail
+tail tail tail
+總數是零個head
+第一次也是零
+所以在這邊呢
+我們的機率就是八分之一
+就是我們這個case
+就等於這個tail tail
+只有這個case
+你看到tail tail tail
+也就是
+one out of a number of elements
+八個裡頭就一個符合
+所以這機率是八分之一
+以下類推
+那如果我們看到x等於零
+y等於二
+那代表什麼意思
+我第一次看到的是tail
+沒有看到零個head
+那就是我第一個丟出來是tail
+是反面
+然後呢我總數是二
+總數是兩個head
+那總數就會看到兩個head
+兩個head的裡頭呢
+你第一次看到的是我們的tail
+所以這裡頭只有這個
+tail head head
+所以這個就是我們的tail head head
+所以它的機率就是八分之一
+就我們這邊看到八分之一
+我們就把八分之一填到
+x等於零
+y等於二
+這邊這個八分之一
+那我們再看一個例題
+這個例題呢就是
+一零一代表
+probability x等於一
+x等於一
+y等於零
+那x等於一
+y等於零
+那就表示說
+我們的x看到第一個是head
+但是總head數是零
+那這個是不可能發生
+所以它機率是零
+它不可能
+因為你已經看到一個head
+你總三次丟完
+至少看到一個head
+所以不可能零
+所以這個機率呢
+就是零
+所以我們會看到我們這邊機率是零
+以下類推同學可以練習吧
+我們這邊已經講了三個數字
+同學可以把其他每個cell
+每個空格
+把這個機率把它算
+算完以後你怎麼知道你對不對呢
+這全部的機率加起來
+八分之一加八分之二
+加八分之一加零零
+八分之一 八分之二 八分之一
+加起來要等於一
+如果不等於一
+就是你當中可能有一個或兩個算錯
+那這個每一個的機率
+都要大於等於零
+那全部加起來要等於一
+submation pxy
+要等於一
+就這邊要等於一
+就我們總數放著一
+那這個就是叫做
+joined probability function
+那它是針對兩個離散型
+那因此呢
+我們做法呢
+我們同學看就知道
+跟我們一個離散型隨機變數
+要找它的機率函數
+是一樣的
+非常類似的做法
+那另外呢
+我們有的時候
+我們會對什麼
+對我們的probability
+只針對x
+或只針對y
+它的機率函數有興趣
+我們有了這個聯合機率函數
+那我們想要對x的機率函數
+或y的機率函數有興趣
+那你怎麼找呢
+譬如說
+我對x有興趣
+透過這joined probability function
+我想找到
+p of x是多少
+或者p of y是多少
+我只針對一個x
+從兩個變一個
+那我們怎麼找呢
+我們就看
+就利用這個表
+我就可以找到
+譬如說我對y有興趣
+y的機率函數有興趣
+那我就寫說
+p y 這個
+y有四個值
+0 1 2 3
+那p y 0
+就等於y等於0的時候
+那y等於0的時候
+就sum down
+你看y等於0
+它可能發生機率是x等於0
+x等於1
+那管你什麼x
+我只是對y等於0有興趣
+就把這個加總
+1%加0就是1%
+把這一行加起來
+所以p y等於y
+在y等於0的時候
+它是等於1%
+在我們這邊看到的
+那如果我對y等於1有興趣
+y等於1
+那x有兩個case
+把它全部加
+你不管x是什麼值
+好 y等於1的時候
+它可能的總機率就3%
+就把這兩個2%加1%
+等於3%
+以下類推
+所以我們在p y等於2的時候
+就把這兩個加起來
+p y等於3
+把這加起來
+那你就知道
+這就是p y等於y
+那這是針對y
+這個隨機變數
+我們可以透過
+joined probability mass function
+這邊這個表
+也可以找到y的probability function
+同理
+我們要找x的一樣
+x的可能值就0跟1
+那我們找大x等於小x
+就大x等於0的時候
+就把這一列加總
+就得到4%
+x等於1管你什麼
+就sum over all the possible values of y
+把所有y的可能值
+把1 x等於1的機率加起來4%
+每一個機率都要大於等於0
+小於等於1
+它的總和要1
+這邊總和也要1
+聯合機率
+函數的每個點加起來也要1
+那這樣子我們就可以找到
+這個針對隨機變數x
+它的probability function
+針對隨機變數y
+它的probability function
+那換句話說
+因為有了joined probability
+那我要找它的probability x
+大x等於小x
+大y等於小y
+那我們這個就叫它
+叫marginal function
+邊際函數
+或者邊際機率函數
+為什麼叫marginal
+叫邊際
+因為就發生在它的最後一列
+最後一行
+那所以我們就叫它
+它的邊際
+英文叫marginal
+margin就是邊際
+marginal probability function
+那我們找這個x的時候
+就sum over
+all the possible values of y
+你要找y的時候
+就把所有x的可能值加總
+在joined probability function
+加總所有的x
+可能值就給你y的邊際
+機率函數
+那我們就會看到
+我們下面就整理出來
+你怎樣去找我們的
+marginal probability function
+那我們說
+第一個你要找P of y
+你就sum down
+加總
+從上加到下
+the associated column of the table
+那同學就可以看到
+我要找y
+因為我把x通常寫成列
+y如果寫成行的話
+好當然你寫y寫在x
+寫這個是ok的
+但一般我們喜歡
+把x寫成列
+y寫成行
+那這樣的話
+就sum down
+這叫sum down
+由上往下加
+叫sum down
+那就這樣加起來
+這個就是你的邊際函數
+那我們也可以這樣寫
+做完的時候
+你要寫y的邊際函數
+或者y的probability
+mass function
+或probability function
+那我們就寫
+可以叫寫y的probability function
+或者他的marginal probability function
+你也可以寫成一個表
+寫成行或列
+y的可能值是0123
+所以P of大y的小y
+那他的值呢
+同學就可以從
+他的margin
+sum down y的可能值
+那他發生機率
+有1%、3%、3%、1%
+1%、3%、3%
+還有1%
+所以每一個機率
+都是大於等於0
+小於等於1
+然後總和一定1
+那同理
+我們x呢
+這可能值只有0跟1
+P of x
+這個我們可以叫P
+今天寫P的小y
+P的小x呢
+就我們這4%、4%
+你當然也可以這樣列
+可以分別列出
+x跟y
+他的marginal probability function
+或者就是xy的probability function
+從我們的joined probability function
+你可以列出來
+這個就叫做
+bivariate probability distribution
+那我們首先是針對
+兩個離散型隨機變數
+介紹要怎麼求它
+那這裡也是剛剛我們講的
+Px和Py
+那就是這個x的probability function
+y的probability function
+因為它找的時候
+是在行跟列的邊際
+最後一列、最後一行
+所以我們又叫它叫
+marginal probability function
+如果我們是從
+聯合機率函數
+推導出來的話
+那我們就叫它
+marginal probability function
+那現在請同學看一下
+立體二
+立體二呢
+就是立體一裡頭
+我們的marginal probability function
+你可以寫成這樣
+就像我們這邊
+你也可以用表列方式
+也可以像我們條列方式
+就可以找出我們的
+marginal probability function
+介紹完離散型二元隨機變數
+那我們就來找我們的
+連續型二元隨機變數的
+機率、密度函數
+針對連續型隨機變數
+它的函數
+我們通常都叫
+probability density function
+density function
+所以我們在這裡叫
+機率、密度函數
+這個是我們的
+二元的隨機變數
+兩個隨機變數都是連續型
+我們怎樣找出來它的
+joined probability
+density function
+或我們簡稱
+probability function
+也是可以的
+好
+那我們看一下定義
+二元連續型隨機變數
+它的聯合機率、密度函數
+PDF
+它的joined PDF
+那這樣
+density function
+那一定是你隨機變數是連續型
+要不然不會有密度
+那這裡我們就說
+suppose that
+X and Y
+are jointly distributed
+continuous random variables
+它們兩個呢
+這兩個變數是jointly
+它們有個聯合機率分布
+然後它們兩個都是連續型隨機變數
+那我們說它的
+joined density function
+is a piecewise continuous function
+of two variables
+F of XY
+就是它的joined density function
+代號就用F of XY來表示
+such that for any reasonable two-dimensional set
+那這是我們的定義
+關於二元連續型隨機變數的
+joined probability density function的定義
+那一樣
+這個function
+只要是joined probability density function
+那它就要滿足以下的條件
+針對兩個變數的話
+它F of XY
+它一定要正的
+那在它的積分
+積分就像我們在禮善型的summation
+這積分符號就是summation
+你針對F of X
+summation
+先針對X
+D of X
+做積分
+那就等於summation F of X
+然後再對Y做積分
+那等於summation Y
+好 它這兩個積分的
+出來的答案必須是1
+也就是說
+我們的joined probability density function
+它的積分是1
+那我們說那marginal
+density function有什麼特性
+跟禮善型一樣
+F of X
+我怎麼定義它呢
+它就是積分
+針對所有的
+你要X
+那就加總Y
+所以加總本來是summation
+換成積分
+summation在連續型就等同於積分
+就是針對所有的可能的Y值
+做積分
+F of XY
+針對它的聯合機率密度函數
+因為你是針對Y
+所以是加總Y
+所以這個積分dy
+就取代我們禮善型的summation
+那要找Y呢
+你就針對所有可能的X值做積分
+所以這個積分符號跟著dx走
+你對X這裡就dx
+你對Y這裡就dy
+你要找Y的marginal density function
+或者density function
+就針對它做積分
+joined probability function
+針對X做積分
+那我們就說
+再請同學注意一下
+在禮善型的情況
+marginal mass function
+was found by summing
+你用加總的
+the joined probability mass function
+over the other variable
+我要找X的我就針對Y
+加總
+Y的所有可能值把它加起來
+就像我們在前面一個例子看到的
+那針對連續型
+我們是找它的marginal density function
+是利用我們的integration
+利用積分的方式
+去找我們的marginal density function
+那我們現在用立體來說明
+joined probability function
+還有怎麼樣去找我們的
+marginal density function
+那我們看一下立體三
+在立體三的地方
+我們就假設XY是一個
+two-dimensional continuous random variable
+它是連續型的
+兩個都連續型
+那它的joined density function
+就像我們在這邊看到的
+那這種題目就是
+我們常常在考試所會看到
+那也是測試同學
+知不知道一個
+probability density function
+管它是針對一個X
+還是兩個
+聯合兩個隨機變數的
+聯合機率密度函數
+它的基本特性
+那像這題它就跟你C
+然後跟你講X介於5到10
+Y介於4到9
+它等於C
+對於其他的X、Y值
+它沒有定義
+它是0
+第一個當然是叫你找C
+那你怎麼找C
+當然是從它的基本特性來找
+那找到C以後
+你已經有把C值找出來以後
+你就有了它的聯合密度函數
+然後你再用積分的方式
+去找X的marginal density function
+找Y的marginal density function
+那我們就來看看
+怎麼找C
+記得你像這種題目
+是很常見的
+你會做一題就會做其他的
+你既然找C
+那就要針對什麼
+我們一看這個題目就知道
+我們要針對我們的特性
+我們在做我們的
+聯合機率密度函數的時候
+有一個特性
+這個特性就跟你講說
+它的總積分是1
+換句話說
+針對我們的立體三
+example 3
+那我們要找C的時候
+find the C
+一定是積分
+我們的F of X、Y
+D of X、D、Y
+那我們針對我們的X跟Y做積分
+那這總積分一定要是1
+這是我們的特性之一
+joint probability function
+它的特性之一
+就我們前面看到的這個特性
+它的特性
+它的積分它要等於1
+所以我們就利用這個特性
+就找立體三的C
+那同學就可以看到
+因為我們的這個特性
+要求你針對
+因為聯合機率密度函數
+所以你對所有的X
+對所有的Y做積分
+同學記得這個積分
+就是summation
+離散型的summation
+那你對X這裡先寫X
+你再積分Y這裡再寫Y
+它是等於1
+那從這裡呢
+我們就把我們的這個C
+F of X就是C
+所以我們在做這個積分呢
+我們這個F of X
+這個部分
+帶到我們前面的函數是
+就是C
+所以我們可以看一下
+我們前面的
+那我們針對X做積分
+這個所有的可能值
+X只有在5到10的時候
+有定義
+Y在4到9的時候有定義
+你先寫X
+所以這邊也先寫X
+這個積分X
+就等於我們summation的X
+先把X加起來
+先做這個
+這個做完以後
+再做D of Y
+那Y的可能值就是4到9
+再做積分4到9
+那這個因為
+這是很簡單的積分
+所以我們就直接看這個立體
+我們在這邊做C
+那這個C做積分呢
+我們把C是個常數
+你可以把它提出去
+這裡剩1
+沒寫就是1
+1做積分的X
+它就出來是X
+那再把它上下線帶進去
+就是5到10
+這5到10帶進去
+就是什麼
+所以我們這等於積分4到9
+這裡5到10
+把C如果先提出去
+提到這裡來
+那我們這邊剩1
+這DXDY
+我們先做這個部分
+那這個部分的積分呢
+就是C4到9
+那這個積分就是
+X的5到10DY
+那這是一個簡單的積分
+C積分4到9
+X的5到10呢
+那就是10減5
+這邊就是5DY
+那5DY呢
+我們再把5提出去
+這變成5C的積分4到9
+5C的積分4到9
+這邊也是剩YDY
+那我們這邊做一次
+下次類似的
+同學可以回家
+自己在這邊練
+把這拿出去
+我們這剩1的DY
+那這就是5C
+那這個做積分
+就給你Y
+它的4到9
+4到9呢
+就是它的上線減下線
+9減掉4
+那就變成25C
+那我們已經講了
+所有這個積分
+必須要等於1
+它summation積分等於1
+也換句話說
+也就是25C等於1
+我們得到這個結果
+所以呢
+我們就C等於1 25分之1
+那這就是我們出來的結果
+那C等於1 25分之1呢
+我們就把它帶進
+我們原來的函數式
+我們的函數式呢
+F of XY
+等於1 25分之1
+針對X在5到10
+Y在4到9
+我們就可以把C帶進去
+等於0
+otherwise
+這個呢
+就是我們的
+joined probability density function
+我們就可以找到我們的
+joined probability density function
+在這裡把C帶進去
+那帶進去之後呢
+如果B問題呢
+要請你找它的marginal
+所以第一個你找marginal
+F of X的marginal
+它的函數式
+我們隨機變數這裡是大寫
+裡頭是小寫
+表示它的possible value of X
+那我們就要
+你要找X的
+有joined的
+那對Y做積分
+那Y的可能值呢
+是4到9
+Y的所有可能值
+F of XY
+那就25分之1
+那我們要對Y做積分
+記得
+這裡是所有可能值
+這是DY
+這樣等同於我們
+禮善型的summation
+那這個積分跟剛剛很像
+把25分之1提出來
+這裡剩1
+所以這就是Y的4到9
+那就是25分之1的9減4
+那就是5分之1
+5除以25
+我們答案就這邊看到5分之1
+同理
+我們做5到10
+同學也可以回家練習
+把25分之1拿出來
+這裡變1
+那做積分的1
+就是X
+X乘5到10
+時間5也是5
+所以答案也是5分之1
+那你要把這裡標出來
+X介於5到10
+那Y介於4到9
+那你也可以再寫說
+這個等於0
+otherwise
+等於0對於其他的Y值
+那同學也可以知道
+你如果做積分
+5積到10
+積分這個5分之1
+它會給你1
+這裡積分Y
+從4到9
+它的total probability
+所有可能值4到9
+做積分
+5分之1的dy
+它會給你1
+那這個就是叫做
+marginal probability density function
+那這題主要就秀給各位
+兩個觀念
+一個是它的特性
+join probability function
+它針對X做積分
+Y做積分
+它的總面積要是1
+從這裡我們可以把C找出來
+找出來就等同於我們有
+probability density function
+我們就針對這個
+probability density function
+我們可以找出
+X的marginal function
+還有Y的marginal function
+下面我們再看立題四
+立題四
+這裡是給我們說
+我們的join probability function
+是2
+那X大於0小於Y
+這個Y是一個常數
+那這個Y值是介於0到1
+所以Y是0到1裡頭
+任何一個值
+那這題有一點點複雜
+是這裡不是常數
+如果這題改成
+X大於0小於1
+那就會比較簡單
+那這裡它是Y
+那Y它的值就介於0到1
+所以這裡是比較特殊的
+X的上限比較特殊
+那這個join probability function
+等於0
+對於其他的X跟Y值
+好這是我們怎麼樣去
+定義一個join probability function
+我們的問題是
+第一個請找X的marginal function
+找Y的marginal function
+找probability
+大X小於Y
+它的機率會是多少
+那我們就來看
+從這裡我們就marginal
+F of X
+它等於all the possible value of Y
+你要找X的
+這個marginal probability function
+它的邊際密度函數
+那我們找X的
+就針對Y做積分
+記得這積分
+all possible value of Y
+這裡就dy
+這聯合機率函數
+那我們所有的Y可能值
+不能寫0到1
+因為Y它的可能值0到1
+但我們這邊還有一個
+這個Y也有限制
+Y是大於X小於1
+所以我們做的時候
+在這裡的時候要小心
+假如這裡也是一個常數
+那就不要管它
+我們直接0到1
+那這裡的我們的Y
+它是大於X
+那又這個大於0小於1
+那X大於0
+所以它才要大於X
+所以我積的時候
+這邊要整合這兩個
+Y要從X到1
+那我們再把f of X
+2帶進來
+2是一個常數提出去
+那這邊就剩1
+跟剛剛一樣
+我們積分1
+就是Y
+Y的上下線帶進去
+就是1減掉X
+1減掉X
+把2乘下來
+答案就是2減2X
+那這是marginal
+寫完馬上要寫這個
+X是介於0
+不要寫Y
+0到1
+因為Y小於1
+這個函數是已經沒有Y了
+所以你不能把這個扳下來
+我們寫的時候就是
+X大於0小於1
+等於0
+otherwise
+這邊你也可以加
+等於0
+otherwise對於其他的X值
+所以我們最後的
+X的marginal
+density function
+是2減2X
+那X是接0到1
+注意
+0到1這裡
+那我們針對Y
+找它的marginal也是
+按照我們的定義
+找這個marginal
+要對sum over
+或對order X
+要積分
+那這dX
+這積分OX
+這dX
+這裡寫它的
+joint probability density function
+那joint probability density function
+是2
+所以我們把2移過來
+那這個積分
+那我們要對X做積分
+那X的可能值
+是0到Y
+所以我們這邊就寫
+0到Y
+那這邊因為我們等一下
+會給Y的限制
+所以這裡寫0到Y
+是OK的
+這裡2
+跟剛剛一樣做積分
+X0到Y
+把X這裡
+代Y減掉0
+那就是Y
+所以我們這邊出來
+積分的結果是2Y
+2Y一定要加上這個
+因為找Y的marginal
+density function
+那這個函數有定義
+只有現在Y在0到1
+所以到marginal的時候
+這裡一定要寫常數
+就算我們原來的
+joint的時候
+它們兩個是有關聯的
+那做完積分以後
+找完marginal的時候
+這一定要寫常數
+所以這邊就等於2Y
+那我們如果做積分
+X小於Y
+我們就會做積分
+因為joint一定是兩個積分
+那這是2
+是我們的聯合機率
+密度函數2
+dXdy
+你可以先對X做積分
+那你對X做積分積什麼
+X你要小於Y
+那就0到Y
+那再對Y做積分
+Y是0到1
+把X的上下線代進去
+那我們先對X做積分
+這一塊
+那X積分把2提出去
+就是2X
+所以這裡就給你2Y減0
+那就是2Y
+再針對2Y積分
+那就2的Y平方除2
+再做積分上下線
+0跟1代進去
+一定等於1
+那這題當然等於1
+你看這個就知道
+為什麼
+我們這邊說
+這個函數是有意義
+說X要小於Y
+那Y小於1
+要不然它沒定義
+所以這個積分X小於Y
+我們再積出來
+這也是1
+上面我們再看
+立體物
+立體物是說
+假如我們有個
+機率密度函數
+F of XY
+那是2的1的-X
+1的-Y
+X介於0到無窮大
+Y介於0到無窮大
+等於0
+Otherwise
+那這個機率密度函數
+叫你找
+X大於1
+Y小於1
+叫你求這個機率
+那probability X大於1
+且Y小於1
+因為它是連續型
+所以我們不能用表列
+所以都要做積分
+要滿足這兩個
+那我們可以先積X
+X大於1
+那X它的可能值
+是1到無窮大
+因為它沒有關聯
+2的1的-X
+1的-Y dx
+那我們先做這個積分
+X的積分
+那做完X積分
+我們再做Y的積分
+我們這邊就先
+把X的可能值
+寫到我們的積分的上下線
+積分符號的上下線
+所以我們在這裡做的時候
+同學就可以寫成這樣
+把我們的probability
+X大於1
+Y小於1
+那我們做積分的時候
+就積分看我們的第一個
+0到1
+這裡呢
+這是1到無窮大
+那我們這邊寫2的
+1的-X
+1的-Y
+那我們1的-Y
+因為你對於
+這個X先做積分
+dXdy
+那我們就先做這一塊的積分
+你先做這個的積分的時候
+你把Y當成常數
+你可以把Y當成常數
+所以積的時候
+0到1
+把這個1of-Y
+提出來
+這裡只做1到無窮大
+這是2
+你可以把2e to the Y
+提出去
+這兩個提出去
+1的-X的dX
+和dy
+你把他提出去
+他就變成這樣
+你可以先做
+這個積分
+e to the無窮大
+e to the minus
+那我們做了這個以後
+那我們這1的-X
+1到無窮大
+那做這個積分
+這給你0到1
+我們這邊2
+1的-Y
+那這個積分結果
+會給你-1的-X
+1到無窮大
+我們做完這個積分
+這裡是dy
+這個積分的結果
+會給你這個
+給你這個以後
+我們-1的-X
+那這個我們出來以後
+把1跟無窮大
+把無窮大代進去
+他就是0
+這代無窮大
+這是0
+那這代1進去
+那這個-1
+這個代減掉
+這個負的1的-1
+所以就變成正的1的-1
+正的1的-1
+我們把這裡
+這就等於1的-1
+那1的-1
+我們可以把他提出來
+就是2乘上
+這邊這個出來
+是1的-1
+這個常數
+那剩下來
+就是0到1
+我們把這個結果放著
+2放著
+把這兩個常數
+把它提出去
+1的-Ydy
+把它提出去
+-Ydy
+那1的-Ydy
+我們就知道
+這個做這個積分
+0到1這塊
+他的積分
+就會給我們
+2乘上1的-Y
+這裡就是-1的-Y
+然後我們把0到1
+給他帶進去
+那這出來
+就是我們最後
+看到的這個結果
+1減掉1的-1
+2的1的-1
+那這就是我們最後
+出來的結果
+所以同學可以看到
+如果你有一個
+probability joint density function
+然後你要找
+X和Y在特定的interval上面
+他的機率
+害我們找
+一個隨機變數很像
+如果我們只對X做
+那就只有中間這塊
+把Y當成常數
+先對Y把它當成常數
+然後再對Y做積分
+兩個的話
+就是再對Y做
+那以前我們只學
+一個隨機變數
+那當然只有一個積分
+兩個就兩個積分
+那先對X做
+就把Y當成常數
+把它提出來
+那只針對X做積分
+那這就是我們
+針對另外一個題目
+他是給你一個
+聯合機率密度函數
+叫你找XY在特定區間上的機率
+那我們就是做積分
+來我們先看立體6
+立體6呢
+這是他的
+聯合機率密度函數
+是2的1的-X
+1的-2Y
+X介於0到無窮大
+Y也是0到無窮大
+那第一個問題叫你找
+他的density function
+對於X
+聯合找X
+那我們就找積分
+找Y
+所以你看
+我們就要找density
+那就對所有的Y做積分
+f of X dy
+那就把2的1的-X
+減掉-2Y dy
+對Y做積分
+那對Y做積分的時候
+他是常數
+跟X有關
+都當成常數
+把2的1的-X
+把它提出來
+這裡做1的-2Y
+那我們都知道
+在做這個的時候
+我們可以
+這個1的-Y
+是-1的-Y
+積分
+但是1的-2Y
+我們要做一個轉換
+我們令u等於2Y
+du就是2dy
+那我們可以把這個2
+再移回去2dy
+所以我們可以換成
+1的-u
+那dy呢
+那個u就是2dy
+你可以把2放這
+那也可以把這個dy
+換成1 2du
+都可以
+要不然就是2dy換du
+也可以這個2跟2消掉
+好
+那我們這樣做的時候
+那這樣子
+把1 2提出去
+他就消掉
+這裡的1的-u du
+那就-1的-u
+再把0到無窮大帶進去
+把無窮大帶進去是0
+把0帶進去是
+減掉
+這是1的0次方是1
+所以這裡變-1
+那就等於正1
+我們出來結果就
+1的-X
+你寫到這個的時候
+一定要把X他的定義
+他在0到無窮大
+X對於負的他沒有定義
+所以換句話說
+我們也可以最後
+就寫成
+X他的這個marginal function
+或他X的機率密度函數
+等於e to the minus X
+那對於X介於0到無窮大之間
+等於0
+otherwise
+你也可以最後寫成這樣
+那這個就是
+怎麼去找他的marginal function
+你要做一個轉換
+第二個也是一樣
+我們找X大於1
+Y小於1
+他的機率
+那記得同學看這個
+機率密度函數
+你要找X跟Y在某個區間上
+他會發生的機率
+那就是積分
+這個join probability density function
+他在二維座標上
+join probability function的圖上
+他的曲線下面面積
+X大於1
+Y小於1
+所以我們就先對這個
+這是我們的join
+聯合機率密度函數
+X大於1
+就從1積到X的上限
+Y小於1
+Y就從這個0
+因為我們前面一頁
+你看到Y的定義
+是0到無窮大
+那Y小於1
+就只能0到1
+就把他的值域換好
+先對X做積分
+做完再對Y做積分
+你對X做積分的時候
+把它提出來
+2乘上1的負2Y
+把它提出去當常數
+這裡只剩下1的負X dx
+1的負X dx
+做積分
+就是-1的-X
+1到無窮大
+那1到無窮大
+代進去
+代無窮大
+他是0
+代1進去
+就等於這個減掉
+不代1的
+代1的進去
+-1的-1
+那等於正的1的-1
+正的1的-1
+他是個常數
+把它提出來
+然後我們剩下來
+只有Y
+再對Y做積分
+2E的負2Y
+那一樣跟前面一樣
+我們令U等於2Y
+那2DY
+就是我們的DU
+那我們就可以得到
+這樣子的轉換以後
+做積分
+-1的-U
+再把這兩個代進去
+那就會得到我們這個數字
+那這個就是
+X大於1
+Y小於1
+他的機率
+那我們做C的時候
+那我們想要針對
+X小於A
+A是一個大於0的數字
+你只對X做積分
+那你只要用
+剛剛找到的
+marginal density function
+我們剛剛前面找到的
+marginal density function
+就像我們這邊看到
+是1的-X
+那X定義在0到無窮大之間
+所以我們要找
+X小於A
+A是任何一個
+constant
+大於0的常數
+所以我們就積分
+0到A
+那X的值率是無窮大
+所以A大於0小於無窮大
+那我們對他的
+density function
+那就代我們的
+1的-X進來
+那他的積分
+1的-X的積分就是
+-1的-X
+同學可以把它記起來
+任何積分的
+1的-XDX
+他會等於-1的-X
+可以把它記起來
+那我們這邊
+就把它上下線
+先代上線
+A代進去
+減掉0代進去
+那我們就會得到
+我們的結果是
+1減掉1的-A
+A是一個大於0的常數
+那這個例題
+同學可以回去練習一下
+那這個例題主要是在講
+我們的聯合
+機率密度函數
+有的時候是
+稍微複雜一點的
+像這一題
+或者我們前面這一題
+或者我們前面的這一題
+他的X跟Y是有關聯的
+那有的聯合機率密度函數
+是比較複雜一點
+那我們就要用轉換的方式
+去找我們想要求的
+機率或者marginal
+density function
+好
+那我們這個
+連續型機率密度函數
+介紹完了
+那我們現在介紹
+二元隨機變數
+這個機率函數
+他的expected value
+還有他的variance
+或他的covariance
+共變因素
+那我們就回想一下
+假如我們只有一個隨機變數
+他的期望值
+如果X是一個
+discrete random variable
+離散型的
+那我們E of X
+就是summation X
+乘上P of X
+把所有X
+所有可能的X值加起來
+那他就是期望值
+就是平均數
+就等於μ
+就等於這個distribution的重心
+那如果你是
+continuous random variable
+我們就積分
+我們再把所有可能的X
+去找他的integral
+那所以這個summation符號
+就等同於我們積分dX
+積分dX就類似我們
+離散型的summation
+那只是連續型
+那有些教科書
+連續型機率密度函數
+為了區隔
+是用F of X
+離散型用P of X
+有些教科書
+兩個都叫F of X
+有些教科書
+兩個都叫P of X
+但這個是比較多
+教科書用的
+也是區隔
+只要你是density function
+我們就用F of X
+所以積分dX
+就等同於
+我們的離散型的summation
+針對X的質域
+我們去X
+前面多一個X
+這是他的期望值的求法
+好
+那最general來講
+這是一般找期望值
+假如他是2X
+他是X平方
+X的三次方
+那我們怎麼找呢
+就是summation
+一樣
+離散型
+你是什麼樣的X
+我就把一模一樣
+搬到這
+你是一個X
+我就搬一個
+你是X平方
+G of X等於X平方
+那我這裡換X平方
+G of X等於3X
+那我這裡就換3X
+假如他是離散型
+假如他是連續型的話
+我們就integral
+他的expected value
+就把他整個搬到這頭
+對F of X做積分
+好
+那這是我們以前學過的
+好
+現在我們就看一個定理
+假如我們現在有的是
+二元隨機變數
+他有joined
+probability function
+那不管他是離散或是連續
+那我們這個定理是說
+針對不管離散連續
+他都是成立的
+所以如果X Y
+是兩個independent random variable
+他們兩個獨立
+則E的G of X乘上H of Y
+那你可以分別給他寫
+E的GX乘上E的H of Y
+你可以拆開來寫
+就是E的XY等於EX乘上EY
+如果你簡單看
+G of X如果簡單等於X
+H of Y等於Y
+當然G of X可以是2X
+HY可以X的三次方
+你都可以拆開來
+分別把他寫成這樣
+假如他獨立的話
+下面我們看一下他證明
+這證明很簡單
+這證明是我們針對
+連續型的隨機變數做證明
+離散型也是類似
+我們說X Y是
+假如是兩個連續型隨機變數
+他的joined density function
+我們用F of XY
+下面小寫的XY
+記得下標要用大寫的
+代表隨機變數
+上面括號裡頭一定要用小寫的
+代表他的可能值XY
+那則我們說
+E的G of X乘上H of Y
+我們要證這個
+那任何的X的函數 Y的函數
+那我們就把它寫進去
+按照definition
+就是把這兩個搬進來
+那這邊寫上他的機率密度函數
+DX DY
+這definition說的
+那我們這裡先對X做積分
+再對Y做積分
+那因為他們兩個是independent
+我們條件是independent
+如果independent
+我們前面已經講了
+如果是independent
+F of XY
+可以寫成F of X乘上F of Y
+因為independent
+所以我們可以把這兩個拆開來寫
+那這兩個拆開來寫
+那我們就把這個做積分的時候
+對X跟X有關的
+可以做X的
+跟Y有關的
+跟Y去合併
+那這裡我們就知道說
+那你如果是分別去做
+因為他們兩個沒有關
+對Y來講這是常數
+對X來講Y是常數
+跟Y有關都是常數
+所以我們就可以把它X的弄一遍
+Y的積分就對Y
+那分別做積分
+那這個按照我們的definition
+他就是E的G of X
+這個按照definition
+他就是我們E的H of Y
+所以我們就得證
+E的G of X
+H of Y
+假如XY是兩個連續的
+independent random variable
+那我們就可以證明
+E的G of X乘上E的H of Y
+我們就會得到這個
+那當然G of X最簡單的case就是X
+H of Y最簡單的case就是Y
+那這個就可以寫成這個簡單的case
+那對於禮儀善行
+同學可以看一下
+教科書或者自己證
+你就把積分換成summation
+積分DX就是summation X
+那積分DY就是summation Y
+那很容易你也可以得到相同的結果
+下面我們就看covariance
+除了expected value
+因為兩個變數就有共變異數
+兩個變數
+那我們可以看到
+它的共變異數還有它的variance
+那我們就回想一下
+對於一個隨機變數X怎麼定義它
+它是E的X減μ的平方
+那我們也可以用這個shortcut
+這個叫shortcut formula
+就是它的變解公式
+那就是EX平方減掉μ平方
+那這個我們以前也在前面的章節有看過
+E的X平方減μ平方
+這個可以把A平方減2AB加B平方
+然後之後可以簡化成這個公式
+好 那這個X是不管離散連續
+這個variance of X都是這樣定義的
+那我們這樣兩個隨機變數XY
+它的covariance要怎麼定義
+covariance XY
+我們就把這個拆開來
+X減μ
+covariance XY
+它就是等同於變異X
+你有兩個
+一個叫X
+這是等於X
+兩個都是XX
+所以X減μ的平方
+那你的XY
+就把當中一個變成Y
+所以就變成
+X減掉μ of X
+Y減掉μ of Y
+然後呢
+我們也可以用變解公式
+那類似像這樣
+就把一個X換成Y
+μ本來是E of X
+好 所以一個隨機變數
+那兩個μ平方
+一個是μX
+一個是μY
+所以E of XY
+減掉EX乘上EY
+covariance公式
+那這個是它的shortcut
+就跟我們只有一個X的時候
+要找它的variance
+我們做計算的時候
+都要用shortcut比較快
+那我們這裡呢
+就證明說
+covariance XY
+等於E of XY
+減掉E of X乘上EY
+好 那就
+這邊就給我們把這個計算過程
+秀給各位看
+那這裡covariance XY
+我們先寫成
+X減EX
+Y減掉EY
+那把X乘Y
+X乘上EY
+EX乘Y
+EX乘EY
+那我們可以把它寫成
+A減B
+C減D
+我們可以把它寫成這樣
+把它乘開來變這些式子
+那E
+第一項XY
+就是我們這個
+第二項
+這個E的X EY
+那我們可以寫成這樣
+EX EY
+減掉這個
+把E帶到這裡來
+EY的EX
+那就是EY乘上EX
+因為EX本身是個常數
+它就等於EY EX
+加上EX EY
+那這裡呢
+我們就把這個一個消掉
+那就會變成我們的
+E of XY
+減掉EX乘上EY
+或者說
+EXY減掉μXμY
+這就是我們的公式
+怎麼樣推導出來
+那我們如果只是應用的話
+variance of X
+EX平方減μX的平方
+那如果有兩個變數
+那這不一定要寫下標
+因為只有一個變數
+那如果是兩個變數XY
+它的共變義數呢
+就從這個來
+把一個X變成Y
+它就變成EXY
+減掉μ
+以前是X嘛
+我們下標要不要寫沒關係
+μ平方
+那一個X給Y
+減掉μXμY
+這比較簡單
+這樣記比較簡單
+這個呢
+就是我們的
+期望值共變義數的介紹
+那下面我們再看
+定理
+定理是說
+假如X跟Y
+是independent
+那它的covariance一定是0
+反之不然
+這個只有if
+假如XY是independent
+它們倆一定
+它的共變義數一定是0
+那共變義數我們以前學過
+相關係數等於共變義數
+除以這個X的標準差
+乘上Y的標準差
+所以共變義數0
+也就是相關係數0
+所以XY獨立
+那它們兩個的共變義數一定0
+反之不然
+共變義數0
+不一定XY是獨立
+只有這樣走
+XY獨立
+它們就不相關
+X跟Y是uncorrelated
+它的共變義數是0
+好
+那我們的證明呢
+就是假如XY是獨立
+那我們根據剛剛的定理
+我們就知道
+如果它獨立
+E of XY
+可以寫成EX乘EY
+covariance的公式推導成這樣
+那這個就可以寫成EXY
+所以它是0
+它的共變義數是0
+這就是它的證明
+很簡單的證明
+那這裡remark
+就請大家注意一下
+假如兩個隨機變數
+它的共變義數0
+共變義數除以各自的標準差
+就是我們的相關係數
+所以共變義數0
+也就代表XY中間的相關係數是0
+相關係數0
+那是不是XY是獨立呢
+它不相關
+不表示它一定獨立
+它可能獨立
+也可能不獨立
+它的答案是no
+covariance XY等於0
+XY may not be independent
+它可能是independent
+也可能是dependent
+這都可能
+所以這個定理只有one way
+XY如果是獨立
+它的covariance就是0
+它就不相關
+那如果它covariance是0
+不表示它一定是獨立的
+下面我們看這個counter example
+counter example就是它的反證
+那我們說X跟Y
+它是兩個離散型隨機變數
+那它joined probability function
+or probability mass function
+就給在這
+離散型它的機率
+聯合機率函數
+都是用這個表列的方式
+就這個立體就是我們前面
+類似的立體
+X的可能值在-101
+Y-101
+就把它列出來
+那這個可能值
+所以記得看
+這裡頭每一個值
+都是大於0
+0小於1
+這個叫它的Y等於-101的時候
+它的Y的marginal function
+這是X
+你要找X的就把它加總
+在列加總
+它就給你X的marginal函數
+這個加起來1
+這個marginal加起來1
+全部這個中間的joined probability
+加起來是1
+這題叫你找covariance X Y
+找出來以後問你
+它們兩個是不是獨立的
+好 那我們就看看
+剛剛我們怎樣定義covariance
+我們說你要找X Y covariance
+管它離散連續
+公式就是
+E XY-EX乘上EY
+所以我們在這裡找我們的A
+要找EX
+要covariance
+公式是covariance XY
+EXY-EXEY
+這就是我們的公式
+所以我們第一個
+先找EX
+找EY
+再找EXY
+那我們就來看我們怎麼找
+這個離散型的case怎麼找
+先找E of X
+按照定義
+E of X就是μ of X
+也就是summation X乘上P of X
+就跟我們以前
+只有一個隨機位數定義是一樣
+X乘上PX
+E of Y
+那就summation Y乘上PY
+加總所有的Y
+好
+那X
+那我們乘上PX
+那你要怎麼做
+那我們來跟我們以前做的類似
+這個就等於X的可能值
+那你也可以把它節錄下來
+會比較簡單
+我們也可以把
+找到X的marginal function
+把它寫出來
+X的marginal function
+就跟我們以前看到
+X的probability function一樣
+只是現在我們有兩個X
+它有一個join probability function
+所以你也可以寫這個X
+它的可能值是-101
+所以從這裡你可以找到
+它的density function
+是3%、2%、3%
+這是P of X
+這個是3%、2%、3%
+3%加起來是1
+所以你要找它的E of X
+那就X乘上P of X
+你可以這樣做
+-3%
+0
+這3%
+加總它就是0
+這就是你的Mu of X
+或是summation of X
+那我們就可以看到
+找我們的E of X
+這邊就會給0
+找E of Y類似的
+你可以直接從表上做
+也可以直接-1乘上3%
+加上0乘上2%
+加1乘上3%
+所以我們就知道
+這個也是0
+它出來這個值
+E of Y也是0
+那E的XY
+就是summation XY
+這長什麼樣就把它搬進來
+那因為兩個都有
+所以要放join probability function
+那XY呢
+那同學就可以看前面這個表
+我們看第一個case
+當X等於-1
+Y等於-1
+所以XY就是-1乘上-1
+當X等於-1
+Y等於-1
+它join probability是1%
+找它的交叉值1%
+當X等於-1
+Y等於0
+它交叉值是1%
+所以-1 0 1%
+-1 1 1%
+所以你要寫9個
+0乘上-1乘上1%
+0 0 0
+0 1 1%
+1-1 1%
+1 0 1 1 1%
+就把它的這個X跟Y的交叉值
+就是它的join probability
+所以我們這邊呢
+你就可以看到我們加總這個
+當然很多當中我們的格子有的是0
+0就可以不用寫這個式子
+不要浪費時間
+那最後我們出來的答案也是0
+所以covariance就等於
+E of XY是0
+減掉
+E of X也是0
+E of Y也是0
+所以都是0
+所以covariance等於0
+表示X跟Y are uncorrelated
+它們兩個是不相關的
+所以covariance等於0
+只能講XY是uncorrelated
+它不一定表示它是independent
+所以B問題問你說
+我們就回到我們的問題
+這B問題就問你說
+第一個算了covariance等於0
+covariance等於0最多只能說
+兩個隨機變數
+它彼此是不相關的
+uncorrelated
+然後問你說
+那它是不是independent
+如果問independent
+就像我們在學兩個set
+是不是PAB是不是
+兩個是event是不是獨立的
+PA交GB等於PA乘PB
+那我們就說它AB
+這兩個event是獨立的
+那隨機變數呢
+類似
+所以check
+這個它是不是獨立的
+我們這邊有九個case
+只要給你找到一個case不成立
+那它獨立就不成立了
+所以我們隨便找
+舉例隨便找個例子
+我們就假設我們看
+最簡單
+當X等於0 Y等於0
+是不是check
+它等於P X等於0 Y等於0
+那我們就看這個表
+就每一個格子
+當X等於0 Y等於0的時候
+那X等於0機率是2%
+Y等於0的時候機率是2%
+當X等於0且Y等於0的時候
+它機率是0
+所以我們只要九個case裡頭
+給你找到一個case不滿足
+那它就不獨立
+所以X等於0 Y等於0
+那它機率是0
+那這個X等於0的時候
+marginal它是2%
+Y等於0的marginal是2%
+2%乘2%它是不等於X0的
+也就表示說
+X等於0且Y等於0
+不等於X0乘上PY的0
+所以X跟Y是not independent
+它們是dependent
+但是它們是X跟Y是uncorrelated
+那這個例子我們叫counter example
+counter example就是
+舉例來跟你講
+它的反證
+就是說兩個隨機變數
+就算它是uncorrelated
+X Y uncorrelated
+它不一定獨立
+它也可能獨立
+但在這個例題它不是獨立
+那怎麼樣證明它是independent
+必須要X等於-1 Y等於-1
+它的marginal等於它的join
+那每一個case
+九個的聯合機率函數
+分別等於它的兩個marginal相乘
+要九個都滿足
+它才是X Y才是獨立
+那我們這邊
+只要你找到一個不滿足
+那它就表示它是不獨立的
+獨立性是不存在的
+這是我們的例題八
+那這個講完了以後
+我們就來介紹
+兩個隨機變數
+它的獨立性
+還有它的條件分布
+我們叫conditional distribution
+或conditional probability
+好 那我們這邊就看一下定義
+什麼叫做independent random variables
+我們說X和Y這兩個隨機變數
+它是獨立的
+若且唯若
+if and only if
+probability X它在A set
+Y belongs to B set
+等於這兩個分別兩個相乘
+很像我們以前的兩個event
+PAB等於PA乘PB
+如果這個成立
+我們說它是獨立的
+如果它是獨立的
+那這個就成立
+只要若且唯若
+那從這個定義
+我們就可以衍生出
+可以證明我們的定理
+這個定理它就是
+X Y是independent variable
+若且唯若
+它的CDF
+可以證明它的CDF X Y
+等於個別的CDF相乘
+那下面我們同理可以證其他的
+就是如果X Y是
+independent discrete random variable
+它的join probability
+可以寫成PX乘上PY
+如果每一個case
+針對每一個X Y
+你都可以證明這樣的話
+那它們兩個就是獨立的
+就X Y是independent
+那那個若且唯若
+那如果X Y independent continuous的話
+那它的join density function
+可以是兩個marginal function相乘
+那這個就是我們的independence
+of two random variables
+下面我們看一下立體9
+立體9給我們一個
+join probability function
+那X等於1 2到N
+Y等於1 2到N
+一看這樣就知道
+X Y是屬於兩個離散型隨機變數
+那N當然是個大於等於1的正整數
+那PX Y等於N平方分之一等於0
+otherwise
+所以這邊這題就是
+給你一個聯合機率函數
+然後請問你說
+X跟Y是不是independent
+那你怎麼證independent呢
+就要check
+PX Y我們去看
+是不是兩個marginal相乘
+兩個marginal probability function相乘
+如果等於它的join
+那我們就說它們是independent
+X Y是independent
+那要check這個我們要找
+因為join的我們就有了
+我們要找它的marginal function
+那我們先找X的marginal function
+那你對X的marginal function
+因為它離散型
+只要寫submission
+sum over Y
+all possible values of Y
+然後把join的function放這
+那sum over
+那Y的可能值是1到N
+sum over 1到N
+把PX Y代N平方分之一進來
+那N平方分之一是個常數
+搬出去
+那搬出去以後不是0
+搬出去就剩1
+跟我們剛剛做的integration一樣
+移出去剩1
+1加了N次
+它就是N
+就是我們分子的N
+就是我們的summation
+1
+I等於1到N
+這是那個Y
+你可以寫Y
+可以寫I都可以
+它就等於1加1加1
+加了N次
+所以它的答案就是N
+好
+這個答案是N
+好我們把N代進去
+這裡N除上N平方分之一
+等於N分之一
+那所以這個是我們
+marginal function for X
+就等於N分之一
+因為你對X
+剛剛把X的值域寫出來
+X不是所有值
+X在1到N的時候
+等於0
+otherwise
+那marginal function for Y
+也是類似
+跟它的做法是一樣
+只是sum over X
+所以這個出來以後
+我們也是N分之一
+那這裡要寫Y
+Y的可能值是1 2到N
+那這個是我們分別找出
+X跟Y的marginal function
+就等於X他們個別的
+probability function
+好那要問你說
+他們兩個是不是獨立
+如果他獨立
+按照剛剛我們證出來的
+他的join probability function
+等於他兩個marginal function相乘
+所以我們就要check
+Pxy是不是等於Px乘上Py
+就是他的join
+等於兩個分別相乘
+那我們join的function
+是N平方分之一
+要check
+那這個我們出來是N分之一
+這個我們出來也是N分之一
+他們定義的執意都是一樣的
+所以這個成立
+答案就是yes
+N平方分之一
+對N分之一乘上N分之一
+我們答案就是yes
+所以我們就可以說
+X因為Px的join probability function
+Pxy
+我們可以證明
+他等於Px marginal
+乘上Y的marginal function
+yes 這個是成立的
+所以我們就說
+X跟Y are independent
+那這個是從我們前面的
+這些definition定理
+還有一些相關的定理出來的
+好
+這是我們的例題9
+下面我們看例題10
+例題10是X跟Y
+是兩個連續性隨機變數
+就算他不講連續性
+你只要看到大於0的
+Y大於0
+這個1的minus X minus Y
+這裡寫F of XY
+這就是連續性隨機變數
+那等於0 otherwise
+他問你這一題
+假如他的join function是這樣
+請問XY是不是independent
+我們前面的例題9是離散性
+那這邊是連續性
+連續性
+我們的join density function are given
+那我們想要知道
+X跟Y是不是獨立
+要知道XY是不是獨立
+一樣
+我們要check
+F of XY
+是不是等於他兩個marginal
+分別找出XY的marginal function相乘
+如果答案是yes
+他們就獨立
+如果答案是no
+他們就是不獨立
+所以我們要先找他的marginal function
+F of X
+那F of X我們就做積分
+對Y做積分
+sum over Y
+所以我們先寫
+積分e to the F of X
+把他拉下來
+dy
+對Y做積分
+就等於summation over Y
+所以你做的時候
+這是Y是0到無窮大
+你對dy
+這也是Y做積分
+把這個抄下來
+對Y做積分
+e to the minus X
+是個常數
+你可以搬出來
+剩下e to the minus Y
+e to the minus Y做積分
+就是minus e to the minus Y
+0到無窮大
+把無窮大代進去
+就是0
+減掉
+把0代進去
+就是負1
+這就是變成1
+0減掉負1
+就變正1
+答案就1的負X
+因為是X的marginal density function
+把X的質域寫出來
+X只定義在
+大於0小於無窮大
+或寫X大於0
+這樣也可以
+等於0
+otherwise
+這是X的density function
+那你對Y做積分
+我們是同理
+因為這兩個很類似
+你對Y的時候
+這邊是dx
+這個結果是類似的
+所以我們對Y出來的結果
+是e to the minus Y
+Y也是0到無窮大
+等於0
+otherwise
+那你要check
+f of X Y
+是不是等於f of X乘上f of Y
+我們就把e to the minus X minus Y
+放在這
+這是f of X Y
+那我們分別出來
+f of X等於e to the minus X
+放在這
+f of Y分別出來
+是e to the minus Y
+把它放在這
+e to the minus X minus Y
+等於e to the minus X乘上
+e to the minus Y
+答案就是yes
+這個成立的
+所以表示X跟Y
+are independent
+因為它滿足f of X Y
+等於f of X乘上f of Y
+好
+所以這題立體式
+是針對兩個連續型隨機變數
+要透過它的join property function
+來看它是不是獨立的
+下面我們看立體式11
+立體式11
+是給你另外一個比較
+稍微複雜一點
+X介於0到Y
+Y介於0到1
+X不是常數
+不像前面兩題
+X介於0到Y
+Y介於0到1
+它的函數是2
+問你說X Y是不是independent
+那我們做法也是一樣
+independent就check
+它的f of X Y
+是不是等於f of X乘上f of Y
+所以我們先找兩個marginal function出來
+先找f of X
+那就對Y做積分
+就把這個f of X
+這個2搬進來
+那summation Y就得積分Y dy
+先對Y做積分
+那Y呢
+跟剛剛一樣
+雖然這邊寫0到1
+但是Y是有限制的
+它跟X有關
+它的最小值
+這個X當成一個常數
+介於0到Y中間一個常數
+所以它積的時候
+不能寫0到1
+要寫X到1去做積分
+所以2呢
+然後X到1
+那把它帶進去
+把1帶進去
+再減掉X帶進去
+X當成一個常數
+積分的結果就是2減掉2X
+然後把它標出來
+X介於0到1
+當然我們寫完這邊寫
+等於0
+otherwise
+那我們對Y做積分
+那找它的marginal function
+那對X做積分
+對X
+那X的值域呢
+是從0到Y
+做2 dx
+那就是2Y
+積分結果就Y減0
+就是Y
+把2提出去就是一個Y
+對X做積分
+然後把0到Y上下線帶到X
+那0Y出來結果就是2Y
+那再把Y的值域放進來
+記得這個值域的時候
+只要寫這個常數就好
+那check F of XY
+是不是等於這兩個箱子
+因為F of XY是2
+F of X我們找出來是2減2X
+這是2Y
+這兩個不等
+因為這兩個不等
+所以我們就說
+X and Y are not independent
+它們兩個不獨立
+這是例題11
+例題11我們就介紹
+independence of two random variables
+那我們分別對離散型的隨機變數
+跟連續型隨機變數
+那給你一個joined probability function
+你想要證明它們是
+兩個獨立的變數
+那我們剛剛已經
+透過一些例題來看
+那現在我們要教的
+是叫做conditional distribution of two random variables
+就是條件機率函數
+或者conditional probability function
+或conditional distribution
+那我們就回想一下
+我們在學機率的時候
+假如AB兩個event
+PA given B
+等於PAN的B除上PB
+把這個given條件放分
+兩個交集放在分子
+那這個是我們以前學的
+那我們同時也學過
+PA given B
+如果AB兩個是獨立的話
+它就會等於PA
+那同理我們就可以看到
+假如我們看兩個case
+X Y是兩個離散型隨機變數
+那我要求這個conditional probability function
+X等於X given Y等於Y
+那等於P把這個移到分母
+已知條件放分母
+兩個together放在
+好 逗點就等於交集
+P大X等於X大Y等於Y
+那我們也可以寫成
+PXY它的joined probability function
+XY
+好 大X等於這邊寫小XY
+代表隨機變數XY的兩個特定值
+那這裡呢就是它的marginal
+當Y等於Y的時候
+那當然這個不能等於零
+在這裡我們就知道
+我們也可以把joined function
+透過這個給它寫成
+PX given Y
+property X given Y
+乘上given的就乘上它的marginal
+當然你也可以寫PY given X乘上PX
+這個跟我們以前寫的這個一樣
+它的這兩個交集等於這兩個相乘
+記得given條件
+你既然要given我
+那它發生的機率要乘在這
+given的變數的發生的機率
+那PX等於這個summation
+它的marginal
+它也是sum over所有的Y
+把PX given Y PY
+X的marginal function
+也可以寫成這樣
+和sum over所有的Y
+因為這就是PXY
+就等於把這個搬到這裡來
+同理你可以找PYX
+那這是離散型的case
+針對XY是兩個連續型隨機變數
+那我們這邊就可以看到
+F of X given Y
+我們這邊可以寫成它的marginal
+移到下面
+上面是要joined
+那F of XY一樣
+你也可以寫成
+你這裡是Y
+你要把Y當成已知
+這邊就乘上F of Y
+你要把YX這裡就FX
+誰是已知就乘上它發生的機率
+所以F of X
+如果要找它的marginal
+joined
+你可以用這個來代
+針對Y來做積分
+那這跟離散型一樣
+只是把summation變成積分符號
+那我們現在先看一下立體十二
+立體十二就是在求
+離散型joined function
+它的conditional distribution
+那我們這邊假設XY
+是兩個離散型的隨機變數
+那它的joined probability function
+就給在這裡
+這八個數字是它的joined probability function
+我們想要找什麼
+conditional probability function of X
+given Y等於1
+那這個就跟我們立體一看到的
+joined probability function很類似
+那我們就來看
+我們要找Y等於1
+我們要求probability X等於0
+given Y等於1
+另外我們想求X等於1
+given Y等於1
+管它你要找X或Y或YX
+你反正跟我們以前一樣
+就記得我們以前有學過
+PA given B
+我們怎麼去記這個公式
+就是已知的放在下面
+在已知的機率放下面
+然後這兩個together
+PA交集B
+放在上面
+兩個同時發生放上面
+那所以我們就把Y等於1放下面
+PX等於0
+逗點就等於交集
+就是且Y等於1
+那我們就在這裡
+這等於margin
+Y等於1
+沒有X
+只有Y等於1
+那就看Y等於1
+Y等於1有兩個case
+所以要看它的P of Y
+當Y等於1的時候
+它發生的機率是3%
+當X等於0
+Y等於1的時候
+發生機率是2%
+把這2%放在這
+就3%裡頭的2%
+機率就是2%
+如果你要知道
+X等於1
+Y等於1
+不管它
+先把這個放在分母
+兩個放在一起
+放到分子
+這兩個同時發生放分子
+Y等於1
+只有Y沒有X
+那就看margin
+當Y等於1
+它是3%
+X等於1
+Y等於1
+這個出來就是1%
+3%、1%就是1%
+所以你可以知道
+當Y等於1
+X只有兩個可能值
+所以這兩個加起來
+一定等於1
+那所以以下類推
+你可以把這裡換
+Y等於
+我要求Y等於2
+在X等於0
+那你也是類似找
+找這個X的margin
+那找它的joint probability
+所以這個就是
+怎樣從一個
+joint probability function
+of X、Y
+理戰型隨機變數X、Y
+去找它的conditional probability
+現在我們看一下
+立體十三
+立體十三是針對
+兩個連續型隨機變數X、Y
+我們已知它的joint density function
+然後我們要找它的conditional density
+FY given X
+還有FX given Y
+跟我們以前找機率一樣
+given都是已知
+然後我們重點就是
+F of Y
+這個重點是given Y
+找F of X
+已知Y
+然後找F of X
+好
+那這個是針對連續型
+那我們來看看
+怎麼樣求它的conditional density function
+那我們這題已知
+我們的F of X、Y
+它的joint density function
+等於λ平方
+e to the minusλY
+然後我們的這個X
+是介於0到Y
+這個同學要非常小心在這裡
+Y當成一個常數
+然後Y是大於等於0
+所以我們在這邊
+X是跟Y有關的
+那如果X是一個常數
+那就跟我們前面講的一些練習題很像
+那這題Y
+X它的上限是Y
+那你就把Y當成一個常數
+好
+等於0
+otherwise
+這是我們的joint probability density function
+然後我們想要找什麼
+F of Y given X
+我們先看第一個
+F of Y given X
+你要找conditional distribution
+你的已知永遠放在分母
+這是F of X
+那這個X就是它的marginal
+如果我們有joint
+那我們只有放一個隨機變數
+那我們就叫marginal density
+那上面的Y and X
+跟X and Y一樣
+那就是我們的joint
+下標你可以寫大寫的XY
+裡頭寫小寫的XY
+那既然要找這個
+那我們就需要找我們的F of X
+因為這個joint的density
+我們已經有了
+就是lambda平方
+e to the minus lambda Y
+這裡我們已經有了
+所以我們要找的是
+它的這個density function of X
+好
+那我們在這裡就求我們F of X
+我們的density function of X
+那這個跟我們剛剛一樣
+要找marginal density function of X
+那我們就等於對Y做積分
+這裡對Y
+那這是積分對Y
+這是F of XY
+這是general公式
+那從這個公式
+我們可以把它寫出來
+Y的可能值
+那這個Y的可能值
+大於0
+本來應該寫大於0
+但是因為這兩個是有關係的
+所以我們要整合這兩個
+Y的可能值
+是從X開始
+到無窮大
+那這裡我們就把它帶進來
+lambda平方
+e to the minus lambda Ydy
+那是對Y做積分
+那我們在這裡
+因為做這個積分
+看起來有一點麻煩
+所以我們就要做這個轉換
+那我們就令我們的U等於lambda Y
+所以我們的du
+就會等於lambda的dy
+我們給它做一個轉換
+做完轉換以後
+我們這邊就可以寫成
+把lambda提出來
+積分X到無窮大
+所以我們這邊就變成
+e to the minus U
+那這裡另外一個lambda
+提出來一個lambda
+另外剩一個lambda
+lambda的dy
+那它就是du
+所以我們這邊
+就直接寫du
+這裡就等於我們的du
+那這裡
+因為我們U等於lambda Y
+所以我們的上下標
+就要改變
+本來這是Y
+當我們Y等於X的時候
+我們的U就等於lambda X
+那我們的Y等於無窮大
+因為它上下標
+X跟無窮大
+所以Y等於無窮大的時候
+這個U也是無窮大
+所以我們在上下標
+如果我們這邊換成
+e to the minus U du
+那我們這裡要把下標X
+就換成lambda X
+這裡換成無窮大
+所以我們積分的時候
+這邊就換成
+這個lambda X到無窮大
+那我們這樣做積分
+這是lambda
+那這裡是我們的
+minus E的minus U
+從這裡我們去找
+lambda X無窮大
+所以我們最後出來的
+結果就是我們lambda
+帶無窮大進去
+它就會給你0
+減掉minus E的
+minus lambda X
+那這邊我們就會得到
+我們的lambda
+e to the minus lambda X
+好,這是我們怎麼樣得到
+我們的f of X
+也就是說從這裡
+我們得到我們f of X的X
+等於lambda
+e to the minus lambda X
+那我們的X的值域
+就是大於0
+大於等於0
+小於無窮大
+所以我們得到這個以後
+把lambda乘上
+e to the minus lambda X
+把它換到這裡來
+那我們換到這裡來以後
+我們這邊就會簡化成
+lambda
+e to the minus lambda
+我們的Y減掉X
+我們得到這個以後
+我們再把X
+大於等於0
+小於Y
+然後小於無窮大
+把這個寫出來
+好,這個就是我們的
+marginal function
+那對於我們的
+given X
+找Y的conditional
+我們的conditional function
+那這等於0
+對於其他的X Y值
+好,這是一個conditional function
+那另外呢
+我們也可以找
+f of X given Y
+這也是conditional
+我們已知
+f of Y
+我們要找它的conditional
+那我們這裡寫f of XY
+這個下標的隨機變數
+要放也可以,不放也可以
+那我們的分子呢
+都一樣
+都是lambda平方
+e to the minus Y
+那現在呢
+我們找fY的Y
+剛剛找了f的X
+我們用轉換的方式
+令U等於lambda Y
+那我們可以
+找到我們f of X
+現在我們看
+我們怎麼找我們的f of Y
+那找f of Y的時候
+非常類似
+我們找marginal
+的density of Y
+f of Y的時候
+要對X做積分
+好,我們的X值
+同學看這裡
+0到Y
+所以我們這裡只能積0到Y
+那f of XY
+lambda平方
+e to the minus lambda Y
+然後對X做積分
+所以我們這裡是dX
+那這裡呢
+因為你對X做積分
+這些全是常數
+所以你可以把它搬出來
+lambda平方
+e to the minus lambda Y
+積分0到Y的dX
+這一塊的積分呢
+就是我們的lambda平方
+e to the minus lambda Y
+那這就是X
+它的從0到Y
+所以這邊呢
+也就是lambda平方
+e to the minus lambda Y
+的X代Y
+就Y減0
+那就是Y
+所以我們最後
+也可以給它寫成
+lambda平方
+Y
+e to the minus lambda Y
+那Y的值呢
+是
+我們因為這是marginal
+所以Y呢是一個
+大於等於0
+小於無窮大的一個數值
+等於0
+otherwise
+這是我們求出來
+我們的
+Y的marginal function
+那把Y的marginal function
+代到這
+lambda平方
+Y
+e to the minus lambda Y
+這個消掉以後
+我們就會看到
+我們這邊這個消掉
+這個消掉
+只剩Y分之1
+那這個是
+它的X的條件機率
+given
+以至Y
+所以我們在寫這個的時候
+找出來這個最後答案以後
+我們要給
+這個X的值域
+記得這個在求X的值域
+剛剛是求Y
+求X的function
+它的conditional function
+所以你要給的值是X
+假設Y是一個值
+所以你要給
+X大於等於0
+小於Y
+那這個是
+我們這個值
+那Y是一個
+小於無窮大的數字
+等於0
+otherwise
+立體十三呢
+就是
+從joined density function
+那想要知道我們的
+conditional function of Y
+given X
+conditional function of X
+given Y
+上面我們介紹
+二元隨機變數的
+共變因數
+還有相關係數
+我們在前面也學過
+共變因數
+covariance
+還有correlation
+那在這裡
+因為這是兩個
+在實務應用上
+對於兩個或多個隨機變數
+我們都有興趣的
+叫covariance
+共變因數
+還有它的相關係數
+那所以
+這兩個常常會
+在我們不管離散連續
+實務應用問題上
+常常會想要
+找到這個指標
+那covariance
+它是用來衡量
+兩個變數中間
+它的關係
+所以它可以負可以正
+covariance出來可負可正
+所以covariance的XY
+它的1的X-
+EX
+乘Y-EY
+我們也可以寫成這樣
+那個寫成μXμY
+那這個covariance的value
+可以是正的
+負的也可以是0
+那covariance
+我們可以證明
+看下面
+把它乘開來
+XY減掉μX的X
+減掉我們的μXY
+加上μXμY
+然後根據我們前面
+給的這個常數
+把它搬出來
+那這可以消掉
+我們知道它可以證明
+covariance XY
+等於EXY
+減掉μXμY
+這我們前面其實
+已經證過了
+這裡再看一下
+那另外我們關於相關係數
+也有個定義
+什麼叫相關係數呢
+它就是兩個隨機變數
+我們叫ρ
+這個XY
+我們都用群體相關係數符號
+樣本相關係數
+我們用r
+群體用希臘字ρ
+XY
+等於covariance XY
+除以σX乘上σY
+就共變因數
+除上σX跟σY
+我們算共變因數
+前面這個公式
+你看這個公式
+它有X跟Y
+所以它是帶單位的
+這個共變因數
+算的數值出來
+用這個公式算出來以後
+它是帶單位的
+帶XY單位
+但是我們如果
+用轉乘相關係數
+而且共變因數0
+表示不相關
+那共變因數多大
+表示他們關係多強
+你也講不出來
+就跟標準差一樣
+變因數一樣
+變因數靠近0
+表示這個data的數值很接近
+沒有什麼變化
+變因數越大
+表示data跳動幅度
+它變化越大
+那大到多大
+也沒有答案
+所以共變因數是一個
+很難衡量
+兩個變數中間
+它的關係
+除非它靠近0
+要不然很難講
+它的關係是多強烈
+所以統計學家
+另外有發明一個公式
+叫相關係數
+又叫correlation
+這個相關係數
+就共變因數
+個別除以它自己的標準差
+因為標準差是帶單位的
+不是除變因數
+除標準差
+所以它帶它的單位
+它帶它的單位
+上面也帶x跟y的單位
+一除就消掉它的單位
+而且還有一個很好的特性
+它是介於負1到1
+那這個x跟y
+它的相關係數等於1
+就表示它是
+perfect positive linear correlated
+x跟y
+如果相關係數等於1的話
+等於正1的話
+表示正相關
+那等於負1的話
+表示rho等於負1的話
+表示負相關
+那這個rho等於0
+表示它們兩個是uncorrelated
+沒有線性關係
+那這個是我們在前面也有看過
+在講指標的時候
+那這裡我們也再看一遍
+那我們用圖來表示
+那x跟y像這樣
+看起來圖弄起來
+看起來它比較有強的
+strong positive linear relationship
+那如果它是走像這樣
+我們就說它有
+strong negative linear correlation
+就它的rho很接近負1
+這個rho很接近正1
+那如果像這樣
+看不出來直線的
+然後這樣一團點的話
+就說它有weak linear relationship
+那如果是像這樣
+就weak linear
+但是它有什麼
+strong nonlinear
+strong的非線性關係
+或者我們說有很強曲線關係
+所以這兩個case
+我們算出來的相關係數
+都是接近0
+都是weak weak linear
+所以我們就知道
+我們的這個rho
+我們前面講的這個公式
+它是代表兩個變數中間
+它線性關係的強弱
+越接近絕對值1
+就表示線性關係越強
+越靠近0
+表示越沒有線性關係
+或者我們說它是uncorrelated
+那負的就表示負相關
+正的就表示正相關
+那我們先看定理二
+我們說假如X跟Y是independent
+那它的covariance
+跟它的這個相關係數rho
+都是0
+如果它們是independent
+它的相關係數是0
+反之不然
+就是如果它們相關係數是0
+或covariance是0
+不表示它們是independent
+這我們跟我們剛剛講的
+那個用density function講
+也是很像的
+那證明就covariance是XY
+按照推導出來
+它可以寫成EXY
+減掉μXμY
+那如果它們兩個是獨立
+EXY可以寫成
+EX乘上EY
+減μXμY
+EX就是μX
+EY就是μY
+它就等於0
+covariance是0
+那當然它相關係數就是0
+所以如果XY是independent
+它的covariance等於0
+表示它的相關係數是等於0
+那這裡我們就再次強調
+covariance是0
+不表示XY是獨立的
+只能表示它是uncorrelated
+或是說它們的線性關係
+是非常非常弱的
+它有接近0的話
+線性關係是很弱的
+那我們先看一下
+立體十四
+立體十四是一個example
+給各位看說
+兩個變數是dependent
+but uncorrelated random variable
+它們是dependent
+假如我們有隨機變數X
+它可能的值是-1 0跟1
+那我們說
+for each of these three values
+has the same probability
+我們也令Y等於X平方
+就是X的可能值是-1 0跟1
+它們的發生機率都是一樣的
+那我們令Y等於X平方
+請找出covarianceXY
+然後請你決定
+XY是不是independent
+那我們怎麼做呢
+我們說X的值是-1 0跟1
+它機率都一樣
+總機率是1
+那當然是三分之一
+那covarianceXY
+等於E of XY
+減掉μXμY
+所以covariance E of XY
+減0
+那我們就算
+E of XY
+那我們剛剛已經講過了
+令Y等於X平方
+所以這裡的EXY
+Y就等於X平方
+那就E的X的三次方
+把E的X的三次方
+乘上我們的P of X
+那這個-1的三次方
+乘上三分之一
+加上0的三
+0乘上三分之一就是0
+加上1的三次方
+乘上它相對應的機率
+就等於0
+好
+這裡E of X等於0
+那μ of X
+我們就可以算
+就等於E of X
+把所有的X的可能值
+X乘上P of X
+或F of X
+就-1乘上三分之一
+加上0乘上三分之一
+加上1乘上三分之一
+等於0
+所以我們就說
+X跟Y
+這裡等於E of XY
+等於0
+μ of X等於0
+0乘任何數等於0
+所以μ of Y就不用算
+E of X減掉μ of X
+μY等於0
+好
+所以我們這邊就可以證明說
+covariance等於0
+我們證明XY are uncorrelated
+這是我們可以證明
+第二個問題問你說
+那XY是否independent
+那Y等於X平方
+那表示說
+我們的Y的值
+是completely determined
+by the value of X
+表示Y的值是完全的
+被X來決定
+所以
+X跟Y是不可能獨立的
+X跟Y是dependent
+非常清楚
+它們是dependent
+所以這個例子就秀給各位看
+有兩個隨機變數
+雖然它們是uncorrelated
+但是它們是not independent
+它們是dependent
+我們現在看定理三
+定理三說
+假如X是隨機變數
+那它的變數是
+用σX平方來表示
+那我們就說
+Y等於AX加B
+它是X的linear function
+Y是X的線性函數
+那AB是兩個常數
+A不等於0
+那如果A大於0
+那我們就說ρ的XY
+等於它們的相關係數
+就等於正義
+如果A小於0
+ρ的相關係數
+就等於負1
+就Y是X的線性函數
+那它們兩個相關係數
+不是正義就是負1
+決定在它的A的這個係數
+是大於0還是小於0
+那我們就來看
+怎麼證明它
+Y等於AX加B
+μY就等於E of Y
+就E的AX加B
+A可以提出來
+就變成A的EX加B
+就等於A的μX加B
+那covariance of XY
+等於我們說
+這個covariance of XY
+我們給它寫成
+E的X減掉μX
+乘上Y減掉μY
+那我們可以寫
+X減μX
+Y呢給它代
+AX加B
+減掉AμX加B
+所以簡化以後
+就等於E的X減掉μX
+這部分一樣
+這部分我們簡化B減B
+所以乘上
+A的X減掉μX
+那就等於這兩個一樣
+所以這裡就是
+A的X減掉μX
+那A我們可以提出去
+A的E的X減掉μX
+等於covariance XY
+等於A的σX
+如果這個Y的AX
+那我們這邊就變成
+A的σX
+所以covariance XY
+它的相關係數
+就AσX
+除以σX
+乘上σY
+σY呢就
+這邊σY找標準差
+它的變異數是A平方
+σ平方X
+那找它的標準差
+那就A的絕對值
+乘上σX
+因為標準差不可能負的
+最後這個X消掉
+變成A除上
+這個A的絕對值
+所以如果A是一個正數
+正的real number
+那這XY的相關係數
+就等於正義
+A如果小於0的話
+它就會等於負1
+那我們這邊
+可以證明定理三
+如果Y是X的一個linear function
+那A如果是大於0
+那它的相關係數XY
+它就正義
+如果A小於0
+它們兩個相關係數
+就是負1
+那這個是定理三
+下面我們看定理四
+定理四說XY是兩個隨機變數
+那variance of XY
+就會等於variance X加variance Y
+加上兩倍的covariance XY
+那這個我們假設
+variance X跟Y都存在
+那我們的證明很容易
+看這裡
+variance XY當成一個新的變數
+就叫XY譬如說當成Z
+那等於減掉它的E of XY
+那就μ of X加μ of Y
+它的平方
+那這個我們把X放在一起
+把Y放在一起
+就變成X減μX放一堆
+Y減μY放一堆
+然後把它解開來
+A平方加B平方
+加2AB
+然後我們這裡就會變成
+E的X減μX的平方
+加E的Y減μY的平方
+那這個分別就是我們
+X的變異數的公式
+Y的變異數的公式
+加上兩倍的這個X
+那這就是我們covariance的公式
+加上兩倍covariance XY
+那這個就是我們的
+variance of XY加兩倍的covariance
+那同學自己可以去證明
+如果是X減Y
+那就variance X加variance Y
+減兩倍的covariance XY
+減Y可以當成加上負1乘上Y
+就會變成減兩倍covariance XY
+那從這個定理我們也可以
+衍生出來像這樣
+covariance AX跟BY
+可以把這兩個乘出來AB
+那covariance XY
+那variance AX加BY加C
+等於A平方把它拿出去的variance X
+加B平方的variance Y
+加上2AB的covariance XY
+C是個constant就不用管它
+加減一個數
+一個常數不影響變異數
+所以這是加上2AB的covariance XY
+那如果variance X減Y
+那就variance X加variance Y
+這裡有也是加
+就加上負1的
+對於這個B等於負1
+所以負1的平方提出來也是正
+所以記得這裡是減
+那這裡是variance X加variance Y
+減兩倍的covariance XY
+所以從這個是
+從我們前面定理
+我們可以找到這三個結果
+那下面我們看定理五
+中上我們就有定理五
+假如我們有一組隨機變數
+X1到Xm
+那他們的variance X都是存在的
+都小如瓊達
+那variance of summation XY
+那我有N個隨機變數
+他等於個別的
+就像我們看上面這個
+他前面的定理
+就等於我們看前面兩個variance
+加上兩倍covariance
+這只是兩個隨機變數
+如果我們有N個隨機變數
+他就是每個variance of X加起來
+N個隨機變數的variance相加
+加上所有可能的
+i小於j的covariance XYj
+就兩兩的covariance
+那這個就是我們推出來
+從兩個隨機變數
+推到N個隨機變數
+以上就是我們這個單元

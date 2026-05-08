@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+chroma_db/
+harness/venv/
+project_description.txt
+n8n/system_prompt.txt
+.claudecodesummary.md
