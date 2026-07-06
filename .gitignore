@@ -7,3 +7,4 @@ harness/venv/
 project_description.txt
 n8n/system_prompt.txt
 .claudecodesummary.md
+supabase/.temp/

@@ -22,16 +22,18 @@ YouTube 課程影片
       ▼
 Supabase pgvector（halfvec + ivfflat 索引）
       │
-      │  n8n Cloud Workflow
+      │  Supabase Edge Function（telegram-bot, Deno/TypeScript）
       ▼
-Telegram Trigger
-  → Switch（/ask / /quiz / /summary）
-  → AI Agent
-      ├─ LLM: Gemini 2.0 Flash
-      ├─ Memory: Window Buffer（5 輪對話）
-      └─ Tool: Supabase Vector Store（top-k=5，餘弦相似度）
+Telegram Webhook
+  → 指令路由（/ask / /quiz / /summary / /help）
+  → RAG 檢索（gemini-embedding-001 query embedding → match_documents, top-k=5）
+  → Gemini 2.5 Flash 生成
+      └─ Memory: chat_memory 資料表（每個 chat 保留 5 輪對話）
   → Telegram 回覆
 ```
+
+> 原本以 n8n Cloud 編排，n8n 到期後改為自建後端（Supabase Edge Functions），
+> 全部跑在 Supabase 免費方案上，仍維持全雲端、本機關機後持續運行。
 
 ---
 
@@ -42,8 +44,8 @@ Telegram Trigger
 | 語音轉文字 | OpenAI Whisper | 本地執行，將課程音訊轉為逐字稿 |
 | 向量嵌入 | `gemini-embedding-001`（3072 維） | v1beta REST API 直接呼叫 |
 | 向量庫 | Supabase pgvector（`halfvec(3072)`） | ivfflat + halfvec_cosine_ops 索引 |
-| LLM | Google Gemini 2.0 Flash | n8n 內建節點 |
-| 工作流程 | n8n Cloud | Telegram 觸發、路由、AI Agent 執行 |
+| LLM | Google Gemini 2.5 Flash | v1beta REST API 直接呼叫（2.0 Flash 免費額度已停供） |
+| 後端 | Supabase Edge Functions（Deno/TypeScript） | Telegram webhook、路由、RAG、記憶 |
 | 介面 | Telegram Bot | 使用者對話入口 |
 | Ingestion | Python 3.12 + requests | 一次性本地執行 |
 
@@ -74,8 +76,16 @@ agentForPre/
 │   ├── verify.py             # 驗證：row count + 測試 RAG 查詢
 │   └── requirements.txt
 │
-├── n8n/                      # n8n Workflow 相關
-│   └── (system_prompt 已整合至本 README)
+├── supabase/                 # 自建後端（取代 n8n）
+│   ├── config.toml           # Edge Function 設定（verify_jwt = false）
+│   └── functions/
+│       └── telegram-bot/
+│           ├── index.ts      # webhook 入口：路由 → RAG → Gemini → 回覆
+│           └── prompt.ts     # System Prompt 與 /help 文案
+│
+├── supabase_chat_memory.sql  # 對話記憶資料表（取代 n8n Window Buffer Memory）
+│
+├── n8n/                      # （舊）n8n Workflow 時期的 system prompt，已停用
 │
 ├── data/                     # Whisper 逐字稿（原始檔）
 │   ├── Lec01.txt … Lec16.txt
@@ -97,10 +107,13 @@ cp .env.example .env
 ```
 
 ```
-GOOGLE_API_KEY=       # Google AI Studio — Embedding + n8n Gemini LLM
+GOOGLE_API_KEY=       # Google AI Studio — Embedding + Gemini LLM
 SUPABASE_URL=         # https://xxx.supabase.co
 SUPABASE_SERVICE_KEY= # service_role key（有 INSERT 權限，非 anon key）
 ```
+
+> `.env` 只供本機 ingestion 使用；Edge Function 的金鑰（含 Telegram bot token）
+> 是用 `supabase secrets set` 設定，見下方「後端部署」。
 
 ### 2. 建立 Supabase Schema
 
@@ -136,44 +149,77 @@ python verify.py
 
 ---
 
-## n8n Workflow 設定
+## 後端部署（Supabase Edge Functions）
 
-在 n8n Cloud 建立以下 Workflow 結構：
+後端只有一支 Edge Function：`supabase/functions/telegram-bot/index.ts`。
+System Prompt 在 `prompt.ts`，修改後重新部署即可生效。
 
+### 1. 建立 chat_memory 資料表
+
+到 Supabase **SQL Editor** 執行 `supabase_chat_memory.sql`（一次即可）。
+
+### 2. 登入並連結 Supabase 專案
+
+```bash
+supabase login                              # 開瀏覽器授權
+supabase link --project-ref <project-ref>   # ref 是 SUPABASE_URL 裡 https://<ref>.supabase.co 的那段
 ```
-Telegram Trigger
-  → Switch（依指令路由）
-  → AI Agent
-      Model: Gemini 2.0 Flash（Google AI Studio key）
-      Memory: Window Buffer Memory（Last 5 messages）
-      Tool: Supabase Vector Store
-              Function: match_documents
-              Top K: 5
-              Embedding: Google text-embedding-004（n8n 內建）
-  → Telegram Send Message
+
+### 3. 設定 Edge Function Secrets
+
+```bash
+supabase secrets set \
+  TELEGRAM_BOT_TOKEN=<BotFather 給的 token> \
+  TELEGRAM_WEBHOOK_SECRET=<自訂一串隨機字串> \
+  GOOGLE_API_KEY=<Google AI Studio key>
 ```
 
-### System Prompt（複製貼至 AI Agent 節點的 System Message 欄位）
+（`SUPABASE_URL`、`SUPABASE_SERVICE_ROLE_KEY` 由平台自動注入，不用設。
+可另設 `GEMINI_MODEL` 覆蓋預設的 `gemini-2.5-flash`。）
 
+### 4. 部署 Function
+
+```bash
+supabase functions deploy telegram-bot
 ```
-你是唐麗英老師統計學課程的 AI 備考助教，使用繁體中文回答。
 
-【回答規則】
-1. 回答概念問題時，請引用「來自第X講」讓同學知道出處。
-2. 若使用者輸入 /quiz，請根據搜尋到的內容生成 N 道選擇題，每題含四個選項、標明正確答案與解析。
-3. 若使用者輸入 /summary，請整理成條列式重點筆記，標示一級標題、二級要點。
-4. 若知識庫中找不到足夠相關的內容，請誠實告知，不要捏造。
-5. 課程講義以口語為主，若講義說法不夠精確或與統計學標準定義有出入，請以正確統計學為準，並可補充更嚴謹的說明（標示「補充說明」）。
-6. 保持親切、鼓勵的口吻，像助教陪同學一起備考。
-7. 不需要每次自我介紹，直接回答問題即可。
-8. 回覆時禁止使用任何 Markdown 格式（不用粗體、斜體、標題、清單符號、分隔線）。
-   請用純文字、自然段落方式回答，條列時用「1. 2. 3.」或「・」代替。
+### 5. 設定 Telegram Webhook
 
-【指令格式】
-/ask 問題       → Q&A 模式
-/quiz 主題 N題  → 出 N 道練習題
-/summary 主題   → 生成重點整理
-/help           → 顯示指令說明
+```bash
+curl "https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/setWebhook" \
+  -d "url=https://<project-ref>.supabase.co/functions/v1/telegram-bot" \
+  -d "secret_token=<與步驟 3 相同的 TELEGRAM_WEBHOOK_SECRET>"
+```
+
+確認狀態：
+
+```bash
+curl "https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/getWebhookInfo"
+```
+
+之後在 Telegram 對 bot 傳 `/help` 即可測試。除錯看 Supabase Dashboard →
+**Edge Functions → telegram-bot → Logs**。
+
+### 6. 防止免費專案自動休眠
+
+Supabase 免費方案閒置 7 天會暫停專案。已用 pg_cron + pg_net 設定每日
+自我 ping（經過 API gateway，算作專案活動）：
+
+```sql
+create extension if not exists pg_cron;
+create extension if not exists pg_net;
+select cron.schedule(
+  'keepalive-telegram-bot',
+  '0 3 * * *',  -- 每天 03:00 UTC
+  $$select net.http_get(url := 'https://<project-ref>.supabase.co/functions/v1/telegram-bot')$$
+);
+```
+
+檢查排程與 ping 結果：
+
+```sql
+select jobname, schedule, active from cron.job;
+select status_code, created from net._http_response order by id desc limit 5;
 ```
 
 ---
@@ -203,7 +249,8 @@ https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:emb
 1. 建立 `data/<科目>/` 資料夾，放入 Whisper 逐字稿
 2. 在 `harness/config.py` 的 `SUBJECTS` 字典新增條目
 3. 執行 `python ingest.py --subject <key>`
-4. n8n System Prompt 加入對應的科目切換邏輯
+4. 在 `supabase/functions/telegram-bot/prompt.ts` 加入對應的科目切換邏輯，
+   重新 `supabase functions deploy telegram-bot`
 
 ---
 
@@ -215,3 +262,5 @@ https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:emb
 | ivfflat 建索引失敗 | `vector` 型別限制 2000 維 | 改用 `halfvec(3072)` |
 | 修改維度後查詢異常 | `alter column` 無法改 vector 維度 | `drop table` 後重建 schema |
 | Ingestion 無寫入權限 | 使用 anon key | 改用 service_role key |
+| LLM 一直回錯誤 | `gemini-2.0-flash` 免費額度被 Google 降為 0（429, limit: 0） | 改用 `gemini-2.5-flash` |
+| 免費專案自動暫停 | 閒置 7 天無 API 活動 | pg_cron 每日自我 ping（見部署第 6 步） |

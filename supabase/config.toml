@@ -1,0 +1,6 @@
+# Supabase CLI 設定（僅用於部署 Edge Functions）
+project_id = "agentForPre"
+
+[functions.telegram-bot]
+# Telegram webhook 不會帶 Supabase JWT，改用 TELEGRAM_WEBHOOK_SECRET 驗證來源
+verify_jwt = false
