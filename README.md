@@ -90,6 +90,9 @@ agentForPre/
 │
 ├── supabase_chat_memory.sql  # Bot 狀態資料表：對話記憶 + 各 chat 科目設定
 │
+├── docs/
+│   └── add-subject.md        # 新增科目完整 SOP（含範例與除錯）
+│
 ├── n8n/                      # （舊）n8n Workflow 時期的 system prompt，已停用
 │
 ├── data/                     # Whisper 逐字稿（原始檔）
@@ -250,6 +253,8 @@ https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:emb
 ---
 
 ## 新增科目 SOP
+
+> 完整步驟、範例程式與常見問題見 **[docs/add-subject.md](docs/add-subject.md)**。
 
 1. 建立 `data/<科目>/` 資料夾，放入 Whisper 逐字稿
 2. 在 `harness/config.py` 的 `SUBJECTS` 字典新增條目
