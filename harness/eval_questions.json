@@ -1,0 +1,102 @@
+{
+  "_comment": "RAG 檢索評估測試集。expected_lectures 以逐字稿關鍵字掃描建立（該主題實際被講授的講次）；top-k 檢索結果中任一 chunk 來自 expected_lectures 即算命中（lecture-level hit）。",
+  "subject": "statistics",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "中央極限定理",
+      "question": "什麼是中央極限定理？它為什麼重要？",
+      "expected_lectures": ["Lec13", "Lec14", "Lec15", "ProLec01", "ProLec02"]
+    },
+    {
+      "id": 2,
+      "topic": "常態分配",
+      "question": "常態分配有哪些重要性質？",
+      "expected_lectures": ["Lec10", "Lec11", "Lec13"]
+    },
+    {
+      "id": 3,
+      "topic": "二項分配",
+      "question": "二項分配適用在什麼情況？它的假設是什麼？",
+      "expected_lectures": ["Lec08", "ProLec11"]
+    },
+    {
+      "id": 4,
+      "topic": "波松分配",
+      "question": "Poisson 分配是什麼？通常用來描述哪種現象？",
+      "expected_lectures": ["Lec08", "ProLec09"]
+    },
+    {
+      "id": 5,
+      "topic": "信賴區間",
+      "question": "95% 信賴區間該怎麼正確解釋？",
+      "expected_lectures": ["Lec15", "Lec16", "ProLec05"]
+    },
+    {
+      "id": 6,
+      "topic": "假設檢定",
+      "question": "什麼是虛無假設與對立假設？兩者怎麼設定？",
+      "expected_lectures": ["ProLec01", "ProLec02", "ProLec03"]
+    },
+    {
+      "id": 7,
+      "topic": "型一/型二誤差",
+      "question": "型一誤差和型二誤差的差別是什麼？",
+      "expected_lectures": ["ProLec01", "ProLec02"]
+    },
+    {
+      "id": 8,
+      "topic": "p值",
+      "question": "p 值是什麼意思？怎麼用 p 值決定要不要拒絕虛無假設？",
+      "expected_lectures": ["ProLec01", "ProLec02"]
+    },
+    {
+      "id": 9,
+      "topic": "線性回歸",
+      "question": "簡單線性回歸的最小平方法是怎麼運作的？",
+      "expected_lectures": ["ProLec04", "ProLec05", "ProLec06"]
+    },
+    {
+      "id": 10,
+      "topic": "相關係數",
+      "question": "相關係數的值該怎麼解讀？",
+      "expected_lectures": ["Lec03", "Lec12", "ProLec04"]
+    },
+    {
+      "id": 11,
+      "topic": "變異數分析",
+      "question": "變異數分析（ANOVA）是在檢定什麼？",
+      "expected_lectures": ["ProLec07", "ProLec08"]
+    },
+    {
+      "id": 12,
+      "topic": "卡方檢定",
+      "question": "卡方檢定可以用來檢定什麼？",
+      "expected_lectures": ["ProLec09", "ProLec10", "ProLec13"]
+    },
+    {
+      "id": 13,
+      "topic": "敘述統計指標",
+      "question": "標準差和變異數是什麼？兩者有什麼關係？",
+      "expected_lectures": ["Lec02"]
+    },
+    {
+      "id": 14,
+      "topic": "集中趨勢",
+      "question": "平均數、中位數、眾數有什麼差別？各適合什麼情況？",
+      "expected_lectures": ["Lec02"]
+    },
+    {
+      "id": 15,
+      "topic": "條件機率",
+      "question": "什麼是條件機率？公式怎麼寫？",
+      "expected_lectures": ["Lec04", "Lec06"]
+    },
+    {
+      "id": 16,
+      "topic": "隨機變數",
+      "question": "離散型隨機變數和連續型隨機變數差在哪裡？",
+      "expected_lectures": ["Lec07", "Lec09"]
+    }
+  ]
+}

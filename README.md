@@ -252,6 +252,35 @@ https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:emb
 
 ---
 
+## 檢索品質評估（Hit Rate@5）
+
+以 16 題涵蓋基礎／進階課程的統計學問題評估檢索品質。每題的正解講次
+（ground truth）以逐字稿關鍵字掃描建立；top-5 檢索結果中任一 chunk 來自
+正解講次即算命中，與線上 bot 走完全相同的檢索路徑（RETRIEVAL_QUERY
+embedding → `match_documents`）。
+
+```bash
+cd harness
+python eval_retrieval.py            # Hit Rate@5（與線上設定一致）
+python eval_retrieval.py --top-k 3  # 更嚴格的 k
+```
+
+| 指標 | 結果 |
+|------|------|
+| Hit Rate@5 | **75%**（12/16） |
+| 命中題中排名第 1 | 11/12 題 |
+| 測試集 | `harness/eval_questions.json`（16 題，含 ground truth） |
+
+**未命中分析**：4 題 miss（ANOVA、標準差／變異數、集中趨勢、離散／連續
+隨機變數）經隔離測試，正解講次內的最佳相似度僅 0.61–0.65，低於錯誤講次
+的 0.65–0.76——屬於真實語意落差而非排名差一點。主因：(1) 基礎講次逐字稿
+高度口語化、以算例操作為主，與教科書式定義型問句的語意距離較遠；
+(2) ANOVA 查詢被回歸講次中的 ANOVA 表內容吸走（合理混淆）。可行的改進
+方向：hybrid search（關鍵字 + 向量）、chunk 前綴加講次主題（contextual
+chunking）、query rewriting。
+
+---
+
 ## 新增科目 SOP
 
 > 完整步驟、範例程式與常見問題見 **[docs/add-subject.md](docs/add-subject.md)**。
