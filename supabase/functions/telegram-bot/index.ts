@@ -4,7 +4,14 @@
 // 對話記憶存於 chat_memory 資料表（每個 chat 保留最近 MEMORY_TURNS 輪）。
 
 import { createClient } from "npm:@supabase/supabase-js@2";
-import { HELP_TEXT, SYSTEM_PROMPT } from "./prompt.ts";
+import {
+  DEFAULT_SUBJECT,
+  helpText,
+  resolveSubject,
+  SUBJECTS,
+  subjectList,
+  systemPrompt,
+} from "./prompt.ts";
 
 declare const EdgeRuntime: { waitUntil(p: Promise<unknown>): void } | undefined;
 
@@ -69,7 +76,12 @@ async function handleUpdate(update: Record<string, unknown>) {
   if (!chatId || !text) return; // 忽略貼圖、圖片、編輯訊息等
 
   if (text === "/start" || text === "/help") {
-    await sendMessage(chatId, HELP_TEXT);
+    await sendMessage(chatId, helpText(await getSubject(chatId)));
+    return;
+  }
+
+  if (text.startsWith("/subject")) {
+    await handleSubjectCommand(chatId, text);
     return;
   }
 
@@ -82,11 +94,12 @@ async function handleUpdate(update: Record<string, unknown>) {
   await sendChatAction(chatId, "typing");
 
   try {
+    const subject = await getSubject(chatId);
     const [context, history] = await Promise.all([
-      retrieveContext(query),
+      retrieveContext(query, subject),
       loadMemory(chatId),
     ]);
-    const reply = await generateReply(mode, text, context, history);
+    const reply = await generateReply(mode, text, context, history, subject);
     await sendMessage(chatId, reply);
     await saveMemory(chatId, text, reply);
   } catch (err) {
@@ -103,13 +116,62 @@ function parseCommand(text: string): { mode: Mode; query: string } {
   return { mode: "ask", query: text }; // 無指令時當作一般問答
 }
 
+// ---------- 科目切換（chat_settings 資料表） ----------
+
+async function getSubject(chatId: number): Promise<string> {
+  const { data, error } = await supabase
+    .from("chat_settings")
+    .select("subject")
+    .eq("chat_id", chatId)
+    .maybeSingle();
+  if (error) console.error("getSubject:", error.message);
+  const subject = data?.subject;
+  return subject && subject in SUBJECTS ? subject : DEFAULT_SUBJECT;
+}
+
+async function handleSubjectCommand(chatId: number, text: string) {
+  const arg = text.replace(/^\/subject(?:@\w+)?/, "").trim();
+  const current = await getSubject(chatId);
+
+  if (!arg) {
+    await sendMessage(
+      chatId,
+      `目前科目：${SUBJECTS[current].label}（${SUBJECTS[current].teacher}）\n\n可用科目：\n${subjectList(current)}`,
+    );
+    return;
+  }
+
+  const key = resolveSubject(arg);
+  if (!key) {
+    await sendMessage(
+      chatId,
+      `找不到科目「${arg}」。\n\n可用科目：\n${subjectList(current)}`,
+    );
+    return;
+  }
+
+  const { error } = await supabase
+    .from("chat_settings")
+    .upsert({ chat_id: chatId, subject: key, updated_at: new Date().toISOString() });
+  if (error) {
+    console.error("setSubject:", error.message);
+    await sendMessage(chatId, "抱歉，切換科目時發生錯誤，請稍後再試一次。");
+    return;
+  }
+  await sendMessage(
+    chatId,
+    `已切換到「${SUBJECTS[key].label}」（${SUBJECTS[key].teacher}），之後的問答都會從這個科目的知識庫檢索。`,
+  );
+}
+
 // ---------- RAG 檢索 ----------
 
-async function retrieveContext(query: string): Promise<string> {
+async function retrieveContext(query: string, subject: string): Promise<string> {
   const embedding = await embedQuery(query);
   const { data, error } = await supabase.rpc("match_documents", {
     query_embedding: embedding,
     match_count: MATCH_COUNT,
+    filter: { subject }, // 只檢索目前科目的內容
   });
   if (error) throw new Error(`match_documents: ${error.message}`);
 
@@ -152,6 +214,7 @@ async function generateReply(
   userText: string,
   context: string,
   history: ChatTurn[],
+  subject: string,
 ): Promise<string> {
   const contents = [
     ...history.map((t) => ({ role: t.role, parts: [{ text: t.content }] })),
@@ -172,7 +235,7 @@ async function generateReply(
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        systemInstruction: { parts: [{ text: systemPrompt(subject) }] },
         contents,
         generationConfig: {
           temperature: 0.7,

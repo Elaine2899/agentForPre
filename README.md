@@ -4,7 +4,12 @@
 使用者可透過 Telegram 指令進行概念問答、生成練習題、整理重點筆記。
 全雲端架構，本機關機後服務仍持續運行。
 
-![Telegram Bot Demo](img/1088892_0.jpg)
+| | |
+|---|---|
+| ![先詢問第二講內容](img/1090611_0.jpg) | ![只輸入 /quiz，助教記得上下文](img/1090612_0.jpg) |
+
+*上下文記憶展示：先問「第二講教什麼」，之後只輸入 `/quiz` 不帶主題，
+助教記得剛聊完第二講，自動出對應的練習題。*
 
 ---
 
@@ -25,8 +30,8 @@ Supabase pgvector（halfvec + ivfflat 索引）
       │  Supabase Edge Function（telegram-bot, Deno/TypeScript）
       ▼
 Telegram Webhook
-  → 指令路由（/ask / /quiz / /summary / /help）
-  → RAG 檢索（gemini-embedding-001 query embedding → match_documents, top-k=5）
+  → 指令路由（/ask / /quiz / /summary / /subject / /help）
+  → RAG 檢索（gemini-embedding-001 query embedding → match_documents, top-k=5，依科目過濾）
   → Gemini 2.5 Flash 生成
       └─ Memory: chat_memory 資料表（每個 chat 保留 5 輪對話）
   → Telegram 回覆
@@ -81,9 +86,9 @@ agentForPre/
 │   └── functions/
 │       └── telegram-bot/
 │           ├── index.ts      # webhook 入口：路由 → RAG → Gemini → 回覆
-│           └── prompt.ts     # System Prompt 與 /help 文案
+│           └── prompt.ts     # 科目註冊表、System Prompt 模板、/help 文案
 │
-├── supabase_chat_memory.sql  # 對話記憶資料表（取代 n8n Window Buffer Memory）
+├── supabase_chat_memory.sql  # Bot 狀態資料表：對話記憶 + 各 chat 科目設定
 │
 ├── n8n/                      # （舊）n8n Workflow 時期的 system prompt，已停用
 │
@@ -249,8 +254,13 @@ https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:emb
 1. 建立 `data/<科目>/` 資料夾，放入 Whisper 逐字稿
 2. 在 `harness/config.py` 的 `SUBJECTS` 字典新增條目
 3. 執行 `python ingest.py --subject <key>`
-4. 在 `supabase/functions/telegram-bot/prompt.ts` 加入對應的科目切換邏輯，
-   重新 `supabase functions deploy telegram-bot`
+4. 在 `supabase/functions/telegram-bot/prompt.ts` 的 `SUBJECTS` 註冊表加一筆
+   （key 必須與 `config.py` 的 key 一致），執行
+   `supabase functions deploy telegram-bot` 重新部署
+
+使用者在 Telegram 輸入 `/subject` 可查看科目清單、`/subject <科目>` 切換；
+每個 chat 的選擇存在 `chat_settings` 資料表，檢索時以
+`metadata.subject` 過濾，各科目知識庫互不干擾。
 
 ---
 
